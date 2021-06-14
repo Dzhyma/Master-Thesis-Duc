@@ -1,0 +1,101 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="StyleSheet.uss" />
+    <ui:VisualElement name="Content" style="left: 10%; top: 10%; right: 10%; bottom: 10%; width: 80%; height: 80%; background-color: rgba(255, 255, 255, 0.4);">
+        <ui:VisualElement name="TopPane" style="flex-direction: row-reverse; height: 10%;">
+            <ui:Button text="Minimize" display-tooltip-when-elided="true" name="MinimizeButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="MainPane" style="height: 90%;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
+                <ui:VisualElement name="Valence1" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Valence1TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Arousal1" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Arousal1TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                        <ui:Toggle name="Arousal1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Dominance1" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Dominance1TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page2" style="height: 100%; display: none;">
+                <ui:VisualElement name="Valence2" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Arosal2" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Arousal2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Toggle1" value="false" />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Dominance2" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Dominance2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
