@@ -1,2 +1,21 @@
+Done: 
+Mirror + Rigging + Interact with UI
+
+TODO:
+Fill the UI, How important is video
+Make the room (Where to put UI and Mirror)
+Fast Rigging?
+Stella done?
+Register
+
+Overleaf
+SPSS
+https://www.spss-tutorials.com/spss-repeated-measures-anova-example-2/
+
+https://www.spss-tutorials.com/spss-repeated-measures-anova-example-2/
+https://www.analyticsvidhya.com/blog/2018/01/anova-analysis-of-variance/
+https://statistics.laerd.com/spss-tutorials/friedman-test-using-spss-statistics.php
+register
+
 Empatica Watch
 Magic Mirror asset
