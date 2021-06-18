@@ -10,6 +10,8 @@ namespace Valve.VR.Extras
 
         //public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.__actions_default_in_InteractUI;
         public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.GetBooleanAction("InteractUI");
+        public SteamVR_Action_Boolean teleport = SteamVR_Input.GetBooleanAction("Teleport");
+        public bool interactTrue;
 
         public bool active = true;
         public Color color;
@@ -23,6 +25,7 @@ namespace Valve.VR.Extras
         public event PointerEventHandler PointerIn;
         public event PointerEventHandler PointerOut;
         public event PointerEventHandler PointerClick;
+        public bool atCoroutine = false;
 
         Transform previousContact = null;
 
@@ -68,6 +71,8 @@ namespace Valve.VR.Extras
             Material newMaterial = new Material(Shader.Find("Unlit/Color"));
             newMaterial.SetColor("_Color", color);
             pointer.GetComponent<MeshRenderer>().material = newMaterial;
+            holder.SetActive(false);
+            
         }
 
         public virtual void OnPointerIn(PointerEventArgs e)
@@ -91,11 +96,12 @@ namespace Valve.VR.Extras
 
         private void Update()
         {
+            /*
             if (!isActive)
             {
                 isActive = true;
                 this.transform.GetChild(0).gameObject.SetActive(true);
-            }
+            }*/
 
             float dist = 100f;
 
@@ -150,6 +156,10 @@ namespace Valve.VR.Extras
                 pointer.transform.localScale = new Vector3(thickness * 5f, thickness * 5f, dist);
                 pointer.GetComponent<MeshRenderer>().material.color = clickColor;
             }
+            if (interactWithUI != null && teleport.GetState(pose.inputSource)&&!atCoroutine)
+            {
+                StartCoroutine(ShowOrHidePointer());
+            }
             else
             {
                 pointer.transform.localScale = new Vector3(thickness, thickness, dist);
@@ -157,6 +167,14 @@ namespace Valve.VR.Extras
             }
             pointer.transform.localPosition = new Vector3(0f, 0f, dist / 2f);
         }
+        IEnumerator ShowOrHidePointer()
+        {
+            atCoroutine = true;
+            //Debug.Log("Trying to show or hide "+ holder.activeSelf);
+            holder.SetActive(!holder.activeSelf);
+            yield return new WaitForSeconds(0.5f);
+            atCoroutine = false;
+        }
     }
-
 }
+

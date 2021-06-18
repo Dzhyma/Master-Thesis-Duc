@@ -105,15 +105,19 @@ public class SceneHandler : MonoBehaviour
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
+        /*
         Debug.Log("in Ray");
         pEvent = e;
         Debug.Log(ScreenCoordinatesToRenderTexture(e));
+        */
     }
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
+        /*
         Debug.Log("out Ray");
         pEvent = e;
         Debug.Log(ScreenCoordinatesToRenderTexture(e));
+        */
     }
 }
