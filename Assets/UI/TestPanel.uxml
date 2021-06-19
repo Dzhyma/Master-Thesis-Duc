@@ -53,6 +53,12 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page2" style="height: 100%; display: none;">
+                <ui:Image name="Video1" style="height: 100%; width: 100%;" />
+                <ui:VisualElement name="BottomPane2" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: none; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page3" style="height: 100%; display: none;">
                 <ui:VisualElement name="Valence2" style="width: 100%; height: 30%;">
                     <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
                     <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
@@ -94,6 +100,9 @@
                         <ui:Toggle name="Dominance1Toggle" value="false" />
                         <ui:Toggle name="Dominance1Toggle" value="false" />
                     </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

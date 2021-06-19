@@ -15,6 +15,8 @@ public class UIScript : MonoBehaviour
     public int[] valence;
     public int[] arousal;
     public int[] dominance;
+    public RenderTexture textureVideo1;
+    public UnityEngine.Video.VideoPlayer videoPlayer1;
 
     private void OnEnable()
     {
@@ -24,12 +26,22 @@ public class UIScript : MonoBehaviour
         dominance = new int[numberOfPages];
         root = GetComponent<UIDocument>().rootVisualElement;
         //var index = 0;
-
+        /*
         button_next = root.Q<Button>("NextButton");
         button_next.RegisterCallback<ClickEvent>(ev => loadNextPage());
+        */
+        root.Query<Button>("NextButton").ForEach(Button =>
+        {
+            Button.RegisterCallback<ClickEvent>(ev => loadNextPage());
+        }
+        );
 
         button_minimize = root.Q<Button>("MinimizeButton");
         button_minimize.RegisterCallback<ClickEvent>(ev => toggleMainPane());
+
+        var video = root.Q<Image>("Video1");
+        video.image = textureVideo1;
+
 
         mainPane = root.Q("MainPane");
         /*
@@ -110,6 +122,14 @@ public class UIScript : MonoBehaviour
         //toggleShowElement(curPage);
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
+        if (currentPage == 2) {
+            /*
+            root.Query("Page" + currentPage).Children<Button>().ForEach(button =>
+            { button.style.display = DisplayStyle.None; });
+            */
+                videoPlayer1.Play();
+            videoPlayer1.loopPointReached += EndReached;
+        } 
         //toggleShowElement(newPage);
     }
 
@@ -155,5 +175,12 @@ public class UIScript : MonoBehaviour
 );
         currentToggle.value = true;
         toggleFieldName[pageNumber-1] = index;
+    }
+
+    void EndReached(UnityEngine.Video.VideoPlayer vp)
+    {
+        root.Query("BottomPane" + currentPage).Children<Button>().ForEach(button =>
+        { button.style.display = DisplayStyle.Flex; });
+        Debug.Log("End Reached");
     }
 }
