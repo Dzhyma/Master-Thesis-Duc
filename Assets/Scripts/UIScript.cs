@@ -10,7 +10,7 @@ public class UIScript : MonoBehaviour
     private VisualElement mainPane;
     public int currentPage = 1;
     public VisualElement root;
-    public int numberOfPages = 2;
+    public int numberOfSAM;
     public UQueryBuilder<VisualElement> test;
     public int[] valence;
     public int[] arousal;
@@ -18,12 +18,19 @@ public class UIScript : MonoBehaviour
     public RenderTexture textureVideo1;
     public UnityEngine.Video.VideoPlayer videoPlayer1;
 
+    public UnityEngine.Video.VideoPlayer videoPlayer2;
+    public RenderTexture textureVideo2;
+
     private void OnEnable()
     {
 
-        valence = new int[numberOfPages];
-        arousal = new int[numberOfPages];
-        dominance = new int[numberOfPages];
+        valence = new int[numberOfSAM];
+        arousal = new int[numberOfSAM];
+        dominance = new int[numberOfSAM];
+
+        Populate(valence, -1);
+        Populate(arousal, -1);
+        Populate(dominance, -1);
         root = GetComponent<UIDocument>().rootVisualElement;
         //var index = 0;
         /*
@@ -36,49 +43,19 @@ public class UIScript : MonoBehaviour
         }
         );
 
+        /* Probably do not need minimize
         button_minimize = root.Q<Button>("MinimizeButton");
         button_minimize.RegisterCallback<ClickEvent>(ev => toggleMainPane());
-
+        */
         var video = root.Q<Image>("Video1");
         video.image = textureVideo1;
 
+        var video2 = root.Q<Image>("Video2");
+        video2.image = textureVideo2;
+
 
         mainPane = root.Q("MainPane");
-        /*
-        root.Query().Children<Toggle>().ForEach(toggle => {
-            var name = toggle.name;
-            if (name.EndsWith("Toggle")) {
-                Debug.Log(toggle.name);
-                //Get the part before the number
-                Regex re = new Regex(@"([a-zA-Z]+)(\d+)");
-                Match result = re.Match(name);
-
-                string identifier = result.Groups[1].Value;
-                //string numberPart = result.Groups[2].Value;
-
-               var currentPage = Regex.Match(name, @"\d+").Value;
-               Debug.Log(identifier);
-               Debug.Log(currentPage);
-
-                switch (identifier) {
-                    case "Arousal": toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive(toggle, Int32.Parse(currentPage), 0));
-                }
-
-            }
-
-
-
-            if(toggle.name == "Dominance1Toggle"|| toggle.name == "Valence1Toggle" || toggle.name == "Arousal1Toggle") { 
-            toggle.RegisterCallback<ClickEvent>(ev =>
-            {
-
-                   Debug.Log("testmich"+toggle.name);
-            });
-            }
-            //toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive(toggle, index, 0));
-        }) ;
-        */
-        for (int i = 1; i <= numberOfPages; i++) {
+        for (int i = 1; i <= numberOfSAM; i++) {
             var index = 0;
             var currentI = i;
             Debug.Log(i);
@@ -112,25 +89,29 @@ public class UIScript : MonoBehaviour
     }
 
 
-    //Bug regarding property?
     private void loadNextPage() {
 
-        //var root = GetComponent<UIDocument>().rootVisualElement;
         var curPage = root.Q("Page" + currentPage);
         currentPage++;
         curPage.style.display = DisplayStyle.None;
-        //toggleShowElement(curPage);
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
         if (currentPage == 2) {
-            /*
-            root.Query("Page" + currentPage).Children<Button>().ForEach(button =>
-            { button.style.display = DisplayStyle.None; });
-            */
-                videoPlayer1.Play();
+            disableAllBottomPane();
+            videoPlayer1.Play();
             videoPlayer1.loopPointReached += EndReached;
-        } 
-        //toggleShowElement(newPage);
+        }
+
+        if (currentPage == 6)
+        {
+            disableAllBottomPane();
+            videoPlayer2.Play();
+            videoPlayer2.loopPointReached += EndReached;
+        }
+
+        if (currentPage == 3 || currentPage == 5 || currentPage == 7 || currentPage == 9) {
+            disableAllBottomPane();
+        }
     }
 
     private void toggleMainPane() {
@@ -150,37 +131,44 @@ public class UIScript : MonoBehaviour
         }
     }
    
-    private void setOnlyThisToggleActive(Toggle currentToggle, int index, int valueToSaveTo) {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-        root.Query("Arousal1Toggle").Children<Toggle>().ForEach(toggle =>
-        {
-            toggle.value = false;
-        }
-        );
-        currentToggle.value = true;
-        //valueToSaveTo = index;
-        Debug.Log("Selected Index " + index);
-    
-    }
-
- 
-
-    private void setOnlyThisToggleActive2(Toggle currentToggle,String currentField, int pageNumber, int index, int[] toggleFieldName)
+    private void setOnlyThisToggleActive2(Toggle currentToggle,String currentField, int currentI, int index, int[] toggleFieldName)
     {
-        Debug.Log(pageNumber);
-        root.Query(currentField+pageNumber+"TogglePane").Children<Toggle>().ForEach(toggle =>
+        Debug.Log(currentI);
+        root.Query(currentField+currentI+"TogglePane").Children<Toggle>().ForEach(toggle =>
         {
             toggle.value = false;
         }
 );
         currentToggle.value = true;
-        toggleFieldName[pageNumber-1] = index;
+        toggleFieldName[currentI-1] = index;
+
+        if ((valence[currentI - 1] != -1) && (arousal[currentI - 1] != -1) && (dominance[currentI - 1] != -1)) { 
+        enableAllBottomPane(); 
+        }
+
     }
 
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {
-        root.Query("BottomPane" + currentPage).Children<Button>().ForEach(button =>
-        { button.style.display = DisplayStyle.Flex; });
+        enableAllBottomPane();
         Debug.Log("End Reached");
+    }
+
+    public void disableAllBottomPane() {
+        root.Query("BottomPane").Children<Button>().ForEach(button =>
+        { button.style.display = DisplayStyle.None; });
+    }
+
+    public void enableAllBottomPane() {
+        root.Query("BottomPane").Children<Button>().ForEach(button =>
+        { button.style.display = DisplayStyle.Flex; });
+    }
+
+    public void Populate(int [] arr, int value)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = value;
+        }
     }
 }
