@@ -7,11 +7,8 @@ namespace Valve.VR.Extras
     public class SteamVR_LaserPointer_UI : MonoBehaviour
     {
         public SteamVR_Behaviour_Pose pose;
-
-        //public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.__actions_default_in_InteractUI;
         public SteamVR_Action_Boolean interactWithUI = SteamVR_Input.GetBooleanAction("InteractUI");
         public SteamVR_Action_Boolean teleport = SteamVR_Input.GetBooleanAction("Teleport");
-        public bool interactTrue;
 
         public bool active = true;
         public Color color;
