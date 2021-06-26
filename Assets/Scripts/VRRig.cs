@@ -33,7 +33,7 @@ public class VRRig : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         transform.position = headContraint.position + headBodyOffset;
         transform.forward = Vector3.Lerp(transform.forward,
