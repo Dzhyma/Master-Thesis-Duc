@@ -5,7 +5,7 @@
             <ui:Button text="Minimize" display-tooltip-when-elided="true" name="MinimizeButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
         </ui:VisualElement>
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="This is some test. I hope you like this page" display-tooltip-when-elided="true" style="font-size: 34px;" />
                 </ui:VisualElement>
@@ -226,6 +226,300 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page10" style="height: 100%; display: none;">
+                <ui:VisualElement name="Questions1" />
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page11" style="height: 100%; display: flex;">
+                <ui:VisualElement name="EmbodimentDescription1" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+                    <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
+                        <ui:Label text="Acceptance&#10;/Body &#10;Ownership " display-tooltip-when-elided="true" style="width: auto; font-size: 30px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-between; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%; flex-wrap: nowrap;">
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center; -unity-text-align: upper-left;">
+                            <ui:Label text="Strongly&#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="1" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="2" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center; font-size: 20px;">
+                            <ui:Label text="Somewhat &#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="3" display-tooltip-when-elided="true" style="width: auto;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Neither&#10;agree nor &#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="4" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Somewhat &#10;agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px; height: 49px;" />
+                            <ui:Label text="5" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="6" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Strongly &#10;agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="7" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment1" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="It felt like the virtual &#10;body was my body." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneAC1" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment1" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="It felt like the virtual &#10;body parts were &#10;my body parts." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneAC2" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment1" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="The virtual body felt &#10;like a human body." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneAC3" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment1" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="It felt like the virtual &#10;body belonged to &#10;me." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneAC4" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page12" style="height: 100%; display: none;">
+                <ui:VisualElement name="EmbodimentDescription2" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+                    <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
+                        <ui:Label text="Control/&#10;Agency" display-tooltip-when-elided="true" style="width: auto; font-size: 34px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-between; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%; flex-wrap: nowrap;">
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center; -unity-text-align: upper-left;">
+                            <ui:Label text="Strongly&#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="1" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="2" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center; font-size: 20px;">
+                            <ui:Label text="Somewhat &#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="3" display-tooltip-when-elided="true" style="width: auto;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Neither&#10;agree nor &#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="4" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Somewhat &#10;agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px; height: 49px;" />
+                            <ui:Label text="5" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="6" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Strongly &#10;agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="7" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment2" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="The movements of &#10;the virtual body felt&#10; like they were my &#10;movements." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCO1" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment2" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="I felt like I was &#10;controlling the &#10;movements of the &#10;virtual body" display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCO2" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment2" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="I felt like I was &#10;causing the &#10;movements of the &#10;virtual body." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCO3" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment2" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="The movements of &#10;the virtual body&#10;were in sync with &#10;my own movements" display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCO4" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page13" style="height: 100%; display: none;">
+                <ui:VisualElement name="EmbodimentDescription3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+                    <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
+                        <ui:Label text="Change" display-tooltip-when-elided="true" style="width: auto; font-size: 34px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-between; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%; flex-wrap: nowrap;">
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center; -unity-text-align: upper-left;">
+                            <ui:Label text="Strongly&#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="1" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="2" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center; font-size: 20px;">
+                            <ui:Label text="Somewhat &#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="3" display-tooltip-when-elided="true" style="width: auto;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Neither&#10;agree nor &#10;disagree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="4" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Somewhat &#10;agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px; height: 49px;" />
+                            <ui:Label text="5" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="6" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="width: 12%; justify-content: space-around; align-items: center;">
+                            <ui:Label text="Strongly &#10;agree" display-tooltip-when-elided="true" style="width: auto; -unity-text-align: upper-center; font-size: 20px;" />
+                            <ui:Label text="7" display-tooltip-when-elided="true" style="width: auto; font-size: 20px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="I felt like the form&#10;or appearance of &#10;my own body had &#10;changed." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCH1" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="I felt like the weight &#10;of my own body &#10;had changed." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCH2" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="position: absolute; top: -5px; left: 40px; right: 587px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%;">
+                        <ui:Label text="I felt like the size&#10;(height) of my own &#10;body had changed." display-tooltip-when-elided="true" style="font-size: 20px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCH3" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="position: absolute; top: -5px; left: 40px; right: 587px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Embodiment3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: center;">
+                    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 20%; font-size: 20px;">
+                        <ui:Label text="I felt like the width &#10;of my own body &#10;had changed." display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="EmbodimentTogglePaneCH4" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="position: absolute; top: -5px; left: 40px; right: 587px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 465px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 575px;" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 680px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>

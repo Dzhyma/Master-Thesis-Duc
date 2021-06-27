@@ -15,6 +15,9 @@ public class UIScript : MonoBehaviour
     public int[] valence;
     public int[] arousal;
     public int[] dominance;
+    public int[] VEQ_AC;
+    public int[] VEQ_CO;
+    public int[] VEQ_CH;
     public RenderTexture textureVideo1;
     public UnityEngine.Video.VideoPlayer videoPlayer1;
 
@@ -31,6 +34,15 @@ public class UIScript : MonoBehaviour
         Populate(valence, -1);
         Populate(arousal, -1);
         Populate(dominance, -1);
+
+        VEQ_AC = new int[4];
+        VEQ_CO = new int[4];
+        VEQ_CH = new int[4];
+        Populate(VEQ_AC, -1);
+        Populate(VEQ_CO, -1);
+        Populate(VEQ_CH, -1);
+
+
         root = GetComponent<UIDocument>().rootVisualElement;
         //var index = 0;
         /*
@@ -86,6 +98,39 @@ public class UIScript : MonoBehaviour
             );
         }
 
+        //Set AC from VEQ
+        for (int i = 1; i <= 4; i++)
+        {
+            var index = 0;
+            var currentI = i;
+            root.Query("EmbodimentTogglePaneAC"+i).Children<Toggle>().ForEach(toggle =>
+            {
+                var currentIndex = index;
+                toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC", currentI, currentIndex, VEQ_AC));
+                index++;
+            }
+            );
+
+            index = 0;
+            root.Query("EmbodimentTogglePaneCO" + i).Children<Toggle>().ForEach(toggle =>
+            {
+                var currentIndex = index;
+                toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCO", currentI, currentIndex, VEQ_CO));
+                index++;
+            }
+            );
+
+            index = 0; ;
+            root.Query("EmbodimentTogglePaneCH" + i).Children<Toggle>().ForEach(toggle =>
+            {
+                var currentIndex = index;
+                toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCH", currentI, currentIndex, VEQ_CH));
+                index++;
+            }
+            );
+
+        }
+
     }
 
 
@@ -133,7 +178,7 @@ public class UIScript : MonoBehaviour
    
     private void setOnlyThisToggleActive2(Toggle currentToggle,String currentField, int currentI, int index, int[] toggleFieldName)
     {
-        Debug.Log(currentI);
+        Debug.Log("Current Index chosen: " + currentI);
         root.Query(currentField+currentI+"TogglePane").Children<Toggle>().ForEach(toggle =>
         {
             toggle.value = false;
@@ -142,8 +187,27 @@ public class UIScript : MonoBehaviour
         currentToggle.value = true;
         toggleFieldName[currentI-1] = index;
 
-        if ((valence[currentI - 1] != -1) && (arousal[currentI - 1] != -1) && (dominance[currentI - 1] != -1)) { 
+        if ((valence[currentI - 1] != -1) && (arousal[currentI - 1] != -1) && (dominance[currentI - 1] != -1))
+        {
+
         enableAllBottomPane(); 
+        }
+
+    }
+
+    private void setThisToggleActiveVEQ(Toggle currentToggle, String currentField, int currentI, int index, int[] toggleFieldName) {
+        Debug.Log("Current Index chosen: " + currentI);
+        root.Query(currentField + currentI).Children<Toggle>().ForEach(toggle =>
+        {
+            toggle.value = false;
+        }
+);
+        currentToggle.value = true;
+        toggleFieldName[currentI - 1] = index;
+
+        if ((toggleFieldName[0] != -1) && (toggleFieldName[1] != -1) && (toggleFieldName[2] != -1) && (toggleFieldName[3] != -1))
+        {
+            enableAllBottomPane();
         }
 
     }
