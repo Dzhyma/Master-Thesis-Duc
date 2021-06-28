@@ -24,7 +24,35 @@ public class UIScript : MonoBehaviour
     public UnityEngine.Video.VideoPlayer videoPlayer2;
     public RenderTexture textureVideo2;
 
-    private void OnEnable()
+    public GameObject firstAvatar;
+    public GameObject secondAvatar;
+
+
+    public void changeAvatar() {
+        Debug.Log("changing avatar");
+
+        String[] bodyPartsToChange = { "Wolf3D_Hair", "EyeLeft","EyeRight", "Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
+        foreach (String body in bodyPartsToChange) {
+            firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials;
+            firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        }
+    }
+
+    GameObject GetChildWithName(GameObject obj, string name)
+    {
+        Transform trans = obj.transform;
+        Transform childTrans = trans.Find(name);
+        if (childTrans != null)
+        {
+            return childTrans.gameObject;
+        }
+        else
+        {
+            return null;
+        }
+
+    }
+        private void OnEnable()
     {
 
         valence = new int[numberOfSAM];
@@ -49,6 +77,10 @@ public class UIScript : MonoBehaviour
         button_next = root.Q<Button>("NextButton");
         button_next.RegisterCallback<ClickEvent>(ev => loadNextPage());
         */
+
+        button_next = root.Q<Button>("Change");
+        button_next.RegisterCallback<ClickEvent>(ev => changeAvatar());
+
         root.Query<Button>("NextButton").ForEach(Button =>
         {
             Button.RegisterCallback<ClickEvent>(ev => loadNextPage());
