@@ -23,6 +23,7 @@ public class VRRig : MonoBehaviour
     public VRMap leftHand;
     public VRMap rightHand;
     public float turnSmooth = 1.0f;
+    public GameObject chair;
 
     public Transform headContraint;
     private Vector3 headBodyOffset;
@@ -30,14 +31,18 @@ public class VRRig : MonoBehaviour
     void Start()
     {
         headBodyOffset = transform.position - headContraint.position;
+        //chair.transform.position = headContraint.position + headBodyOffset;
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         transform.position = headContraint.position + headBodyOffset;
         transform.forward = Vector3.Lerp(transform.forward,
             Vector3.ProjectOnPlane(headContraint.forward, Vector3.up).normalized,Time.deltaTime* turnSmooth);
+        //chair.transform.position = headContraint.position + headBodyOffset;
+        chair.transform.forward = Vector3.Lerp(chair.transform.forward,
+            Vector3.ProjectOnPlane(headContraint.forward, Vector3.up).normalized, Time.deltaTime * turnSmooth);
         head.Map();
         rightHand.Map();
         leftHand.Map();
