@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UIElements;
-using System.Text.RegularExpressions;
+using System.IO;
 
 public class UIScript : MonoBehaviour
 {
@@ -167,7 +167,7 @@ public class UIScript : MonoBehaviour
 
 
     private void loadNextPage() {
-
+        CreateAndWriteFile();
         var curPage = root.Q("Page" + currentPage);
         currentPage++;
         curPage.style.display = DisplayStyle.None;
@@ -260,11 +260,40 @@ public class UIScript : MonoBehaviour
         { button.style.display = DisplayStyle.Flex; });
     }
 
+    /*
+    Method to instantiate a given array with a certain value. 
+    For now used to have starting values of newly created arrays with -1
+    */
     public void Populate(int [] arr, int value)
     {
         for (int i = 0; i < arr.Length; i++)
         {
             arr[i] = value;
+        }
+    }
+
+    public void CreateAndWriteFile() {
+        DateTime localDate = DateTime.Now;
+        string path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom.txt";
+        if (!File.Exists(path))
+        {
+            // Create a file to write to.
+            using (StreamWriter sw = File.CreateText(path))
+            {
+                sw.WriteLine("Hello");
+                sw.WriteLine("And");
+                sw.WriteLine("Welcome");
+            }
+        }
+
+        // Open the file to read from.
+        using (StreamReader sr = File.OpenText(path))
+        {
+            string s;
+            while ((s = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(s);
+            }
         }
     }
 }
