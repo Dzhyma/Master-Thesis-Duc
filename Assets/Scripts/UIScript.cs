@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.IO;
+using System.Text;
 
 public class UIScript : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class UIScript : MonoBehaviour
     public GameObject secondAvatar;
 
 
+    //Path where to save file to
+    private String path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom";
     public void changeAvatar() {
         Debug.Log("changing avatar");
 
@@ -274,26 +277,51 @@ public class UIScript : MonoBehaviour
 
     public void CreateAndWriteFile() {
         DateTime localDate = DateTime.Now;
-        string path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom.txt";
-        if (!File.Exists(path))
+        string filePath = path+ DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".txt";
+        if (!File.Exists(filePath))
         {
             // Create a file to write to.
-            using (StreamWriter sw = File.CreateText(path))
+            using (StreamWriter sw = File.CreateText(filePath))
             {
-                sw.WriteLine("Hello");
-                sw.WriteLine("And");
-                sw.WriteLine("Welcome");
+                //writeForArray(VEQ_AC, sw, "VEQ_AC");
+                sw.WriteLine(ResultToCSV());
+
             }
         }
 
-        // Open the file to read from.
-        using (StreamReader sr = File.OpenText(path))
-        {
-            string s;
-            while ((s = sr.ReadLine()) != null)
-            {
-                Console.WriteLine(s);
-            }
+    }
+
+    public void writeForArray(int[] array, StreamWriter writer,String arrayName) {
+        for (int i = 0; i < array.Length; i++){
+            writer.WriteLine(arrayName + i + " has value: " + array[i]);
         }
+
+    }
+
+    public void appendToCSVFile(int[] array, StringBuilder builder)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            builder.Append(',').Append(array[i]);
+        }
+
+    }
+
+    public string ResultToCSV()
+    {
+
+        String tableHeader = "Test";
+        tableHeader += ",VEQ_AC1,VEQ_AC2,VEQ_AC3,VEQ_AC4";
+        tableHeader += ",VEQ_CO1,VEQ_CO2,VEQ_CO3,VEQ_CO4";
+        tableHeader += ",VEQ_CH1,VEQ_CH2,VEQ_CH3,VEQ_CH4";
+
+
+
+        var sb = new StringBuilder(tableHeader);
+        sb.Append("\n").Append("Test");
+        appendToCSVFile(VEQ_AC, sb);
+        appendToCSVFile(VEQ_CO, sb);
+        appendToCSVFile(VEQ_CH, sb);
+        return sb.ToString();
     }
 }

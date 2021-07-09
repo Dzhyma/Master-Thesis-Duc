@@ -5,7 +5,7 @@
             <ui:Button text="Minimize" display-tooltip-when-elided="true" name="MinimizeButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
         </ui:VisualElement>
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="This is some test. I hope you like this page" display-tooltip-when-elided="true" style="font-size: 34px;" />
                 </ui:VisualElement>
@@ -427,7 +427,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page13" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page13" style="height: 100%; display: flex;">
                 <ui:VisualElement name="EmbodimentDescription3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                     <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
                         <ui:Label text="Change" display-tooltip-when-elided="true" style="width: auto; font-size: 34px;" />
