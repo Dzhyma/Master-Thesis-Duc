@@ -5,9 +5,9 @@
             <ui:Button text="Minimize" display-tooltip-when-elided="true" name="MinimizeButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
         </ui:VisualElement>
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
-                    <ui:Label text="This is some test. I hope you like this page" display-tooltip-when-elided="true" style="font-size: 34px;" />
+                    <ui:Label text="Hi and welcome to the study effect of avatar appearance and gender on emotion. &#10;&#10;You can freely check your surroundings and have a look at the mirror. To be able to interact with the UI just press the middle button witht he thumb finger so the controllers will appear. With the laserpointer and the back button where your index finger is located you can interact with the UI. Please choose next to continue the study." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
@@ -67,8 +67,8 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page4" style="height: 100%; display: none;">
-                <ui:VisualElement name="MainContent" style="height: 90%;">
-                    <ui:Label text="Feel something !!" display-tooltip-when-elided="true" style="font-size: 34px;" />
+                <ui:VisualElement name="MainContent" style="height: 90%; justify-content: center;">
+                    <ui:Label text="Try to think of another happy/sad memory different from before. You can recall your memory how you like e.g. while looking at the mirror. When you are finished continue by pressing the Next button." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 34px; white-space: normal; -unity-text-align: middle-left;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
@@ -128,6 +128,14 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page7" style="height: 100%; display: none;">
+                <ui:VisualElement name="MainContent" style="height: 90%; justify-content: center;">
+                    <ui:Label text="Try to think of another happy/sad memory different from before. You can recall your memory how you like e.g. while looking at the mirror. When you are finished continue by pressing the Next button." display-tooltip-when-elided="true" style="font-size: 34px; white-space: normal; -unity-text-align: middle-left;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page8" style="height: 100%; display: none;">
                 <ui:VisualElement name="Valence3" style="width: 100%; height: 30%;">
                     <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
                     <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
@@ -174,15 +182,21 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page8" style="height: 100%; display: none;">
-                <ui:VisualElement name="MainContent" style="height: 90%;">
-                    <ui:Label text="Feel something !!" display-tooltip-when-elided="true" style="font-size: 34px;" />
+            <ui:VisualElement name="Page9" style="height: 100%; display: none;">
+                <ui:Image name="Video3" style="height: 100%; width: 100%;" />
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: none; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page10" style="height: 100%; display: none;">
+                <ui:VisualElement name="MainContent" style="height: 90%; justify-content: center;">
+                    <ui:Label text="Try to think of another happy/sad memory different from before. You can recall your memory how you like e.g. while looking at the mirror. When you are finished continue by pressing the Next button." display-tooltip-when-elided="true" style="font-size: 34px; white-space: normal; -unity-text-align: middle-left;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page9" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page11" style="height: 100%; display: none;">
                 <ui:VisualElement name="Valence4" style="width: 100%; height: 30%;">
                     <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
                     <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
@@ -229,13 +243,68 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page10" style="height: 100%; display: none;">
-                <ui:VisualElement name="Questions1" />
+            <ui:VisualElement name="Page12" style="height: 100%; display: none;">
+                <ui:Image name="Video4" style="height: 100%; width: 100%;" />
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: none; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page13" style="height: 100%; display: none;">
+                <ui:VisualElement name="MainContent" style="height: 90%; justify-content: center;">
+                    <ui:Label text="Try to think of another happy/sad memory different from before. You can recall your memory how you like e.g. while looking at the mirror. When you are finished continue by pressing the Next button." display-tooltip-when-elided="true" style="font-size: 34px; white-space: normal;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
+                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page14" style="height: 100%; display: none;">
+                <ui:VisualElement name="Valence5" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                        <ui:Toggle name="Valence1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Arosal5" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Arousal2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Toggle1" value="false" />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                        <ui:Toggle />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Dominance5" style="width: 100%; height: 30%;">
+                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9.png&apos;); height: 90%;" />
+                    <ui:VisualElement name="Dominance2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page11" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page15" style="height: 100%; display: none;">
                 <ui:VisualElement name="EmbodimentDescription1" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                     <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
                         <ui:Label text="Acceptance&#10;/Body &#10;Ownership " display-tooltip-when-elided="true" style="width: auto; font-size: 30px;" />
@@ -331,7 +400,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page12" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page16" style="height: 100%; display: none;">
                 <ui:VisualElement name="EmbodimentDescription2" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                     <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
                         <ui:Label text="Control/&#10;Agency" display-tooltip-when-elided="true" style="width: auto; font-size: 34px;" />
@@ -427,7 +496,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page13" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page17" style="height: 100%; display: none;">
                 <ui:VisualElement name="EmbodimentDescription3" style="height: 18%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                     <ui:VisualElement style="width: 20%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0;">
                         <ui:Label text="Change" display-tooltip-when-elided="true" style="width: auto; font-size: 34px;" />
@@ -523,8 +592,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page14" style="height: 100%; display: none;">
-                <ui:Button text="Button" display-tooltip-when-elided="true" name="Change" />
+            <ui:VisualElement name="Page18" style="height: 100%; display: none;">
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>

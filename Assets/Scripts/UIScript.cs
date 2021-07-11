@@ -11,7 +11,7 @@ public class UIScript : MonoBehaviour
     private VisualElement mainPane;
     public int currentPage = 1;
     public VisualElement root;
-    public int numberOfSAM;
+    public int numberOfSAM = 5;
     public UQueryBuilder<VisualElement> test;
     public int[] valence;
     public int[] arousal;
@@ -19,11 +19,19 @@ public class UIScript : MonoBehaviour
     public int[] VEQ_AC;
     public int[] VEQ_CO;
     public int[] VEQ_CH;
-    public RenderTexture textureVideo1;
-    public UnityEngine.Video.VideoPlayer videoPlayer1;
 
+
+    //Video Stuff
+
+    public UnityEngine.Video.VideoPlayer videoPlayer1;
     public UnityEngine.Video.VideoPlayer videoPlayer2;
+    public UnityEngine.Video.VideoPlayer videoPlayer3;
+    public UnityEngine.Video.VideoPlayer videoPlayer4;
+
+    public RenderTexture textureVideo1;
     public RenderTexture textureVideo2;
+    public RenderTexture textureVideo3;
+    public RenderTexture textureVideo4;
 
     public GameObject firstAvatar;
     public GameObject secondAvatar;
@@ -81,8 +89,8 @@ public class UIScript : MonoBehaviour
         button_next.RegisterCallback<ClickEvent>(ev => loadNextPage());
         */
 
-        button_next = root.Q<Button>("Change");
-        button_next.RegisterCallback<ClickEvent>(ev => changeAvatar());
+        //button_next = root.Q<Button>("Change");
+        //button_next.RegisterCallback<ClickEvent>(ev => changeAvatar());
 
         root.Query<Button>("NextButton").ForEach(Button =>
         {
@@ -99,6 +107,12 @@ public class UIScript : MonoBehaviour
 
         var video2 = root.Q<Image>("Video2");
         video2.image = textureVideo2;
+
+        var video3 = root.Q<Image>("Video3");
+        video3.image = textureVideo3;
+
+        var video4 = root.Q<Image>("Video4");
+        video4.image = textureVideo4;
 
 
         mainPane = root.Q("MainPane");
@@ -176,7 +190,18 @@ public class UIScript : MonoBehaviour
         curPage.style.display = DisplayStyle.None;
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
-        if (currentPage == 2) {
+
+        TriggerVideoIfOnPage();
+
+        if (currentPage == 3 || currentPage == 5 || currentPage == 8 || currentPage == 11 || currentPage == 14) {
+            disableAllBottomPane();
+        }
+    }
+
+
+    private void TriggerVideoIfOnPage() {
+        if (currentPage == 2)
+        {
             disableAllBottomPane();
             videoPlayer1.Play();
             videoPlayer1.loopPointReached += EndReached;
@@ -189,9 +214,21 @@ public class UIScript : MonoBehaviour
             videoPlayer2.loopPointReached += EndReached;
         }
 
-        if (currentPage == 3 || currentPage == 5 || currentPage == 7 || currentPage == 9) {
+        if (currentPage == 9)
+        {
             disableAllBottomPane();
+            videoPlayer3.Play();
+            videoPlayer3.loopPointReached += EndReached;
         }
+
+        if (currentPage == 12)
+        {
+            disableAllBottomPane();
+            videoPlayer4.Play();
+            videoPlayer4.loopPointReached += EndReached;
+        }
+
+
     }
 
     private void toggleMainPane() {
