@@ -35,10 +35,19 @@ public class UIScript : MonoBehaviour
 
     public GameObject firstAvatar;
     public GameObject secondAvatar;
+    public GameObject thirdAvatar;
+    public GameObject fourthAvatar;
+
+    public GameObject maleChair;
+    public GameObject femaleChair;
 
 
     //Path where to save file to
     private String path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom";
+
+    private String[] colors = { "Green", "Red","Blue","Yellow","Orange","Purple" };
+
+    public String colorPicked;
     public void changeAvatar() {
         Debug.Log("changing avatar");
 
@@ -47,6 +56,15 @@ public class UIScript : MonoBehaviour
             firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials;
             firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh;
         }
+    }
+
+    //Change von Male to Female
+    public void changeAvatar2()
+    {
+        firstAvatar.SetActive(false);
+        thirdAvatar.SetActive(true);
+        maleChair.SetActive(false);
+        femaleChair.SetActive(true);
     }
 
     GameObject GetChildWithName(GameObject obj, string name)
@@ -180,6 +198,12 @@ public class UIScript : MonoBehaviour
 
         }
 
+
+        //Set Color picker
+        root.Query("ColorTogglePane").Children<Toggle>().ForEach(toggle =>
+        {
+            toggle.RegisterCallback<ClickEvent>(ev => pickColor(toggle.name));
+        });
     }
 
 
@@ -192,6 +216,8 @@ public class UIScript : MonoBehaviour
         newPage.style.display = DisplayStyle.Flex;
 
         TriggerVideoIfOnPage();
+
+        changeAvatar2();
 
         if (currentPage == 3 || currentPage == 5 || currentPage == 8 || currentPage == 11 || currentPage == 14) {
             disableAllBottomPane();
@@ -360,5 +386,18 @@ public class UIScript : MonoBehaviour
         appendToCSVFile(VEQ_CO, sb);
         appendToCSVFile(VEQ_CH, sb);
         return sb.ToString();
+    }
+
+    private void pickColor(String colorPickedFrom) {
+        colorPicked = colorPickedFrom;
+        root.Query("ColorTogglePane").Children<Toggle>().ForEach(toggle =>
+        {
+            toggle.value = false;
+            if (toggle.name.Equals(colorPicked)) {
+                toggle.value = true;
+            }
+        });
+        enableAllBottomPane();
+
     }
 }

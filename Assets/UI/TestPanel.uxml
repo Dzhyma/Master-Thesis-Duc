@@ -5,7 +5,7 @@
             <ui:Button text="Minimize" display-tooltip-when-elided="true" name="MinimizeButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
         </ui:VisualElement>
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="Hi and welcome to the study effect of avatar appearance and gender on emotion. &#10;&#10;You can freely check your surroundings and have a look at the mirror. To be able to interact with the UI just press the middle button witht he thumb finger so the controllers will appear. With the laserpointer and the back button where your index finger is located you can interact with the UI. Please choose next to continue the study." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
@@ -345,7 +345,7 @@
                         <ui:Label text="It felt like the virtual &#10;body was my body." display-tooltip-when-elided="true" style="font-size: 20px;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="EmbodimentTogglePaneAC1" style="flex-direction: row; align-items: center; justify-content: center; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; width: 80%;">
-                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px;" />
+                        <ui:Toggle value="false" style="position: absolute; top: -5px; left: 35px; right: 590px; flex-direction: row;" />
                         <ui:Toggle value="false" style="width: 12%; position: absolute; top: -5px; left: 140px;" />
                         <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 250px;" />
                         <ui:Toggle name="Dominance1Toggle" value="false" style="width: 12%; position: absolute; top: -5px; left: 355px;" />
@@ -592,9 +592,34 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page18" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page18" style="height: 100%; display: flex;">
                 <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 10%;">
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="MainContent" style="height: 90%;">
+                    <ui:Label text="Please choose a color which represents your emotion the best" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: auto; height: auto; -unity-text-align: middle-left; white-space: normal; display: flex;" />
+                    <ui:VisualElement name="EmptyPlace" style="height: 15%;" />
+                    <ui:VisualElement name="ColorButtonPane" style="height: 5%; flex-direction: row; justify-content: space-around;">
+                        <ui:Button text="Green" display-tooltip-when-elided="true" name="GreenButton" style="background-color: rgb(10, 241, 31); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
+                        <ui:Button text="Red" display-tooltip-when-elided="true" name="RedButton" style="background-color: rgb(241, 53, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
+                        <ui:Button text="Blue" display-tooltip-when-elided="true" name="BlueButton" style="background-color: rgb(10, 58, 241); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
+                        <ui:Button text="Yellow" display-tooltip-when-elided="true" name="YellowButton" style="background-color: rgb(241, 238, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
+                        <ui:Button text="Orange" display-tooltip-when-elided="true" name="OrangeButton" style="background-color: rgb(241, 146, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
+                        <ui:Button text="Purple" display-tooltip-when-elided="true" name="PurpleButton" style="background-color: rgb(215, 10, 241); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="ColorTogglePane">
+                        <ui:Toggle value="false" name="Green" class="checkboxSize" style="position: absolute; top: 20px; left: 65px; right: auto;" />
+                        <ui:Toggle value="false" name="Red" style="position: absolute; top: 20px; left: 220px; right: auto;" />
+                        <ui:Toggle value="false" name="Blue" style="position: absolute; top: 20px; left: 370px; right: auto;" />
+                        <ui:Toggle value="false" name="Yellow" style="position: absolute; top: 20px; left: 525px; right: auto;" />
+                        <ui:Toggle value="false" name="Orange" style="position: absolute; top: 20px; left: 690px; right: auto;" />
+                        <ui:Toggle value="false" name="Purple" style="position: absolute; top: 20px; left: 830px; right: auto;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Page19" style="height: 100%; display: none;">
+                <ui:VisualElement name="MainContent" style="height: 90%;">
+                    <ui:Label text="Thank you for participating in the study" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
