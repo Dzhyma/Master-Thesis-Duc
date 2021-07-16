@@ -1,19 +1,19 @@
 .bottom-right {
 }
 
-.checkboxSize > .unity-base-field__input > .unity-toggle__checkmark {
+.checkboxSize > .unity-base-field .unity-base-field__input > .unity-toggle__checkmark {
     width: 50px;
     height: 50px;
     display: none;
 }
 
-.checkboxSize > .unity-base-field__input {
+.checkboxSize > .unity-base-field .unity-base-field__input {
     width: 50px;
     height: 50px;
     background-image: url('/Assets/UI/Pictures/empty.png');
 }
 
-.checkboxSize > .unity-base-field__input:checked {
+.checkboxSize > .unity-base-field .unity-base-field__input:checked {
     width: 50px;
     height: 50px;
     background-image: url('/Assets/UI/Pictures/full.png');
