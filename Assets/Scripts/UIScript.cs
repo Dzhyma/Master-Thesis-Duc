@@ -13,12 +13,14 @@ public class UIScript : MonoBehaviour
     public VisualElement root;
     public int numberOfSAM = 5;
     public UQueryBuilder<VisualElement> test;
-    public int[] valence;
     public int[] arousal;
     public int[] dominance;
+    public int[] valence;
+
     public int[] VEQ_AC;
     public int[] VEQ_CO;
     public int[] VEQ_CH;
+    public String[] colorsPicked;
 
 
     //Video Stuff
@@ -87,6 +89,7 @@ public class UIScript : MonoBehaviour
         valence = new int[numberOfSAM];
         arousal = new int[numberOfSAM];
         dominance = new int[numberOfSAM];
+        colorsPicked = new string[numberOfSAM];
 
         Populate(valence, -1);
         Populate(arousal, -1);
@@ -116,6 +119,18 @@ public class UIScript : MonoBehaviour
         }
         );
 
+        root.Query<Button>("HelpButton").ForEach(Button =>
+        {
+            Button.RegisterCallback<ClickEvent>(ev => ShowHelpPage());
+        }
+        );
+
+        root.Query<Button>("HideButton").ForEach(Button =>
+        {
+            Button.RegisterCallback<ClickEvent>(ev => HideHelpPage());
+        }
+);
+
         /* Probably do not need minimize
         button_minimize = root.Q<Button>("MinimizeButton");
         button_minimize.RegisterCallback<ClickEvent>(ev => toggleMainPane());
@@ -135,34 +150,38 @@ public class UIScript : MonoBehaviour
 
         mainPane = root.Q("MainPane");
         for (int i = 1; i <= numberOfSAM; i++) {
-            var index = 0;
-            var currentI = i;
-            Debug.Log(i);
+            var value = 0;
             root.Query("Arousal"+ i + "TogglePane").Children<Toggle>().ForEach(toggle =>
             {
-                var currentIndex = index;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Arousal", currentI, currentIndex, arousal));
-                index++;
+                var currentIndex = i;
+                var currentValue = value;
+                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Arousal",  currentIndex, currentValue, arousal));
+                value++;
             }
             );
 
-            index = 0;
-            root.Query("Valence" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
-            {
-                var currentIndex = index;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Valence", currentI, currentIndex, valence));
-                index++;
-            }
-            );
-
-             index = 0;;
+            value = 0; ;
             root.Query("Dominance" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
             {
-                var currentIndex = index;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Dominance", currentI, currentIndex, dominance));
-                index++;
+                var currentIndex = i;
+                var currentValue = value;
+                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Dominance",currentIndex, currentValue, dominance));
+                value++;
             }
             );
+
+
+            value = 0;
+            root.Query("Valence" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
+            {
+                var currentIndex = i;
+                var currentValue = value;
+                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Valence", currentIndex, currentValue, valence));
+                value++;
+            }
+            );
+
+
         }
 
         //Set AC from VEQ
@@ -200,10 +219,33 @@ public class UIScript : MonoBehaviour
 
 
         //Set Color picker
-        root.Query("ColorTogglePane").Children<Toggle>().ForEach(toggle =>
+        for (int i = 1; i <= numberOfSAM; i++)
         {
-            toggle.RegisterCallback<ClickEvent>(ev => pickColor(toggle.name));
+            var currentI = i;
+            root.Query("ColorTogglePane"+i).Children<Toggle>().ForEach(toggle =>
+        {
+            toggle.RegisterCallback<ClickEvent>(ev => pickColor(toggle.name, currentI));
         });
+        }
+    }
+
+    private void ShowHelpPage()
+    {
+        var curPage = root.Q("Page" + currentPage);
+        curPage.style.display = DisplayStyle.None;
+        var newPage = root.Q("PageHelp");
+        newPage.style.display = DisplayStyle.Flex;
+
+    }
+
+    private void HideHelpPage()
+    {
+
+        var curPage = root.Q("PageHelp");
+        curPage.style.display = DisplayStyle.None;
+        var newPage = root.Q("Page" + currentPage);
+        newPage.style.display = DisplayStyle.Flex;
+
     }
 
 
@@ -218,9 +260,10 @@ public class UIScript : MonoBehaviour
         TriggerVideoIfOnPage();
 
         changeAvatar2();
+        disableAllBottomPane();
+        if (currentPage == 1 || currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
+            enableAllBottomPane();
 
-        if (currentPage == 3 || currentPage == 5 || currentPage == 8 || currentPage == 11 || currentPage == 14) {
-            disableAllBottomPane();
         }
     }
 
@@ -228,28 +271,24 @@ public class UIScript : MonoBehaviour
     private void TriggerVideoIfOnPage() {
         if (currentPage == 2)
         {
-            disableAllBottomPane();
             videoPlayer1.Play();
             videoPlayer1.loopPointReached += EndReached;
         }
 
-        if (currentPage == 6)
+        if (currentPage == 8)
         {
-            disableAllBottomPane();
             videoPlayer2.Play();
             videoPlayer2.loopPointReached += EndReached;
         }
 
-        if (currentPage == 9)
+        if (currentPage == 12)
         {
-            disableAllBottomPane();
             videoPlayer3.Play();
             videoPlayer3.loopPointReached += EndReached;
         }
 
-        if (currentPage == 12)
+        if (currentPage == 16)
         {
-            disableAllBottomPane();
             videoPlayer4.Play();
             videoPlayer4.loopPointReached += EndReached;
         }
@@ -274,16 +313,17 @@ public class UIScript : MonoBehaviour
         }
     }
    
-    private void setOnlyThisToggleActive2(Toggle currentToggle,String currentField, int currentI, int index, int[] toggleFieldName)
+    private void setOnlyThisToggleActive2(Toggle currentToggle,String currentField, int currentI, int value, int[] toggleFieldName)
     {
-        Debug.Log("Current Index chosen: " + currentI);
+        Debug.Log("Current Panel: " + currentI);
+        Debug.Log("Current value chosen: " + value);
         root.Query(currentField+currentI+"TogglePane").Children<Toggle>().ForEach(toggle =>
         {
             toggle.value = false;
         }
 );
         currentToggle.value = true;
-        toggleFieldName[currentI-1] = index;
+        toggleFieldName[currentI-1] = value;
 
         if ((valence[currentI - 1] != -1) && (arousal[currentI - 1] != -1) && (dominance[currentI - 1] != -1))
         {
@@ -388,9 +428,10 @@ public class UIScript : MonoBehaviour
         return sb.ToString();
     }
 
-    private void pickColor(String colorPickedFrom) {
+    private void pickColor(String colorPickedFrom, int currentIndex) {
         colorPicked = colorPickedFrom;
-        root.Query("ColorTogglePane").Children<Toggle>().ForEach(toggle =>
+        colorsPicked[currentIndex-1] = colorPickedFrom;
+        root.Query("ColorTogglePane"+currentIndex).Children<Toggle>().ForEach(toggle =>
         {
             toggle.value = false;
             if (toggle.name.Equals(colorPicked)) {

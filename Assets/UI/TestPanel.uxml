@@ -64,9 +64,13 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between;">
-                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
-                    <ui:Button text="Help" display-tooltip-when-elided="true" name="HelpButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%;">
+                    <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: auto; justify-content: space-between; width: 50%;">
+                        <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="HelpPane" style="width: 50%;">
+                        <ui:Button text="Help" display-tooltip-when-elided="true" name="HelpButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page4" style="height: 100%; display: none;">
@@ -107,7 +111,7 @@
                 <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
                     <ui:VisualElement name="Arousal2" style="width: 100%; height: 33%;">
                         <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9 - Cut.png&apos;); height: 80%;" />
-                        <ui:VisualElement name="Arousal1TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                        <ui:VisualElement name="Arousal2TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
                             <ui:Toggle name="Arousal1Toggle" value="false" />
                             <ui:Toggle name="Arousal1Toggle" value="false" />
                             <ui:Toggle name="Arousal1Toggle" value="false" />
@@ -121,7 +125,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="Dominance2" style="width: 100%; height: 33%;">
                         <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9 - Cut.png&apos;); height: 80%;" />
-                        <ui:VisualElement name="Dominance1TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                        <ui:VisualElement name="Dominance2TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
                             <ui:Toggle name="Dominance1Toggle" value="false" />
                             <ui:Toggle name="Dominance1Toggle" value="false" />
                             <ui:Toggle name="Dominance1Toggle" value="false" />
@@ -135,7 +139,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement name="Valence2" style="width: 100%; height: 33%;">
                         <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9 - Cut.png&apos;); height: 80%;" />
-                        <ui:VisualElement name="Valence1TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                        <ui:VisualElement name="Valence2TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
                             <ui:Toggle name="Valence1Toggle" value="false" />
                             <ui:Toggle name="Valence1Toggle" value="false" />
                             <ui:Toggle name="Valence1Toggle" value="false" />
@@ -147,9 +151,14 @@
                             <ui:Toggle name="Valence1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
-                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                    <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%;">
+                        <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: auto; justify-content: space-between; width: 50%;">
+                            <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="HelpPane" style="width: 50%;">
+                            <ui:Button text="Help" display-tooltip-when-elided="true" name="HelpButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page7" style="height: 100%; display: none;">
@@ -165,7 +174,7 @@
                         <ui:Button text="Orange" display-tooltip-when-elided="true" name="OrangeButton" style="background-color: rgb(241, 146, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                         <ui:Button text="Purple" display-tooltip-when-elided="true" name="PurpleButton" style="background-color: rgb(215, 10, 241); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ColorTogglePane1" class="checkboxSize">
+                    <ui:VisualElement name="ColorTogglePane2" class="checkboxSize">
                         <ui:Toggle value="false" name="Green" style="position: absolute; top: 20px; left: 45px; right: auto;" />
                         <ui:Toggle value="false" name="Red" style="position: absolute; top: 20px; left: 200px; right: auto;" />
                         <ui:Toggle value="false" name="Blue" style="position: absolute; top: 20px; left: 360px; right: auto;" />
@@ -193,50 +202,57 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page10" style="height: 100%; display: none;">
-                <ui:VisualElement name="Valence3" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
+                <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
+                    <ui:VisualElement name="Arousal3" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Arousal3TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Dominance3" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Dominance3TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Valence3" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Valence3TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="Arosal3" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Arousal2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Toggle1" value="false" />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
+                <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%;">
+                    <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: auto; justify-content: space-between; width: 50%;">
+                        <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="Dominance3" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Dominance2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                    <ui:VisualElement name="HelpPane" style="width: 50%;">
+                        <ui:Button text="Help" display-tooltip-when-elided="true" name="HelpButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
-                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page11" style="height: 100%; display: none;">
@@ -252,7 +268,7 @@
                         <ui:Button text="Orange" display-tooltip-when-elided="true" name="OrangeButton" style="background-color: rgb(241, 146, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                         <ui:Button text="Purple" display-tooltip-when-elided="true" name="PurpleButton" style="background-color: rgb(215, 10, 241); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ColorTogglePane1" class="checkboxSize">
+                    <ui:VisualElement name="ColorTogglePane3" class="checkboxSize">
                         <ui:Toggle value="false" name="Green" style="position: absolute; top: 20px; left: 45px; right: auto;" />
                         <ui:Toggle value="false" name="Red" style="position: absolute; top: 20px; left: 200px; right: auto;" />
                         <ui:Toggle value="false" name="Blue" style="position: absolute; top: 20px; left: 360px; right: auto;" />
@@ -280,50 +296,57 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page14" style="height: 100%; display: none;">
-                <ui:VisualElement name="Valence4" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
+                <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
+                    <ui:VisualElement name="Arousal4" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Arousal4TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Dominance4" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Dominance4TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Valence4" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Valence4TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="Arosal4" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Arousal2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Toggle1" value="false" />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
+                <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%;">
+                    <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: auto; justify-content: space-between; width: 50%;">
+                        <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="Dominance4" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Dominance2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                    <ui:VisualElement name="HelpPane" style="width: 50%;">
+                        <ui:Button text="Help" display-tooltip-when-elided="true" name="HelpButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
-                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page15" style="height: 100%; display: none;">
@@ -339,7 +362,7 @@
                         <ui:Button text="Orange" display-tooltip-when-elided="true" name="OrangeButton" style="background-color: rgb(241, 146, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                         <ui:Button text="Purple" display-tooltip-when-elided="true" name="PurpleButton" style="background-color: rgb(215, 10, 241); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ColorTogglePane1" class="checkboxSize">
+                    <ui:VisualElement name="ColorTogglePane4" class="checkboxSize">
                         <ui:Toggle value="false" name="Green" style="position: absolute; top: 20px; left: 45px; right: auto;" />
                         <ui:Toggle value="false" name="Red" style="position: absolute; top: 20px; left: 200px; right: auto;" />
                         <ui:Toggle value="false" name="Blue" style="position: absolute; top: 20px; left: 360px; right: auto;" />
@@ -367,50 +390,57 @@
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page18" style="height: 100%; display: none;">
-                <ui:VisualElement name="Valence5" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Valence2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
-                        <ui:Toggle name="Valence1Toggle" value="false" />
+                <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
+                    <ui:VisualElement name="Arousal5" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Arousal5TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                            <ui:Toggle name="Arousal1Toggle" value="false" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Dominance5" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Dominance5TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                            <ui:Toggle name="Dominance1Toggle" value="false" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Valence5" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:VisualElement name="Valence5TogglePane" class="checkboxSize" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; height: 20%;">
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                            <ui:Toggle name="Valence1Toggle" value="false" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="Arosal5" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Arousal2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Toggle1" value="false" />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
-                        <ui:Toggle />
+                <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%;">
+                    <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: auto; justify-content: space-between; width: 50%;">
+                        <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="Dominance5" style="width: 100%; height: 30%;">
-                    <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9.png&apos;); height: 90%;" />
-                    <ui:VisualElement name="Dominance2TogglePane" style="flex-direction: row; align-items: auto; justify-content: space-around; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px;">
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
-                        <ui:Toggle name="Dominance1Toggle" value="false" />
+                    <ui:VisualElement name="HelpPane" style="width: 50%;">
+                        <ui:Button text="Help" display-tooltip-when-elided="true" name="HelpButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                     </ui:VisualElement>
-                </ui:VisualElement>
-                <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse;">
-                    <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="Page19" style="height: 100%; display: none;">
@@ -426,7 +456,7 @@
                         <ui:Button text="Orange" display-tooltip-when-elided="true" name="OrangeButton" style="background-color: rgb(241, 146, 10); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                         <ui:Button text="Purple" display-tooltip-when-elided="true" name="PurpleButton" style="background-color: rgb(215, 10, 241); color: rgb(7, 7, 7); width: 15%; font-size: 34px;" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="ColorTogglePane1" class="checkboxSize">
+                    <ui:VisualElement name="ColorTogglePane5" class="checkboxSize">
                         <ui:Toggle value="false" name="Green" style="position: absolute; top: 20px; left: 45px; right: auto;" />
                         <ui:Toggle value="false" name="Red" style="position: absolute; top: 20px; left: 200px; right: auto;" />
                         <ui:Toggle value="false" name="Blue" style="position: absolute; top: 20px; left: 360px; right: auto;" />
@@ -794,7 +824,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page25" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page25" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:VisualElement name="EmbodimentDescription2" style="height: 30%; flex-direction: row; flex-wrap: nowrap; border-left-width: 0; border-right-width: 0; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                         <ui:VisualElement style="width: 15%; justify-content: space-around; align-items: center; border-right-width: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-top-width: 0; border-bottom-width: 0; display: flex;">
@@ -865,9 +895,30 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="PageLastPage" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page26" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="Thank you for participating in the study" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="PageHelp" style="height: 100%; display: none;">
+                <ui:VisualElement name="MainContent" style="max-height: none; height: 95%;">
+                    <ui:VisualElement name="Arousal1" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-A-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:Label text="Arousal describes how strong you feel about the current situation, e.g calm or excited." display-tooltip-when-elided="true" style="height: 20%; font-size: 25px; white-space: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Dominance1" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-D-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:Label text="Dominance describes how much you feel in control of the current situation." display-tooltip-when-elided="true" style="height: 20%; font-size: 25px; white-space: normal;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Valence1" style="width: 100%; height: 33%;">
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/UI/Pictures/SAM-V-9 - Cut.png&apos;); height: 80%;" />
+                        <ui:Label text="Valence says how you feel about the current situation, positive or negative." display-tooltip-when-elided="true" style="height: 20%; font-size: 25px; white-space: normal;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="HidePane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%;">
+                    <ui:VisualElement name="HidePane" style="width: 100%;">
+                        <ui:Button text="Hide" display-tooltip-when-elided="true" name="HideButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
