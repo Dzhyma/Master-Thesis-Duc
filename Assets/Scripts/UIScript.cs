@@ -9,7 +9,7 @@ public class UIScript : MonoBehaviour
     private Button button_next;
     private Button button_minimize;
     private VisualElement mainPane;
-    public int currentPage = 1;
+    public int currentPage = 19;
     public VisualElement root;
     public int numberOfSAM = 5;
     public UQueryBuilder<VisualElement> test;
@@ -47,13 +47,11 @@ public class UIScript : MonoBehaviour
     //Path where to save file to
     private String path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom";
 
-    private String[] colors = { "Green", "Red","Blue","Yellow","Orange","Purple" };
-
     public String colorPicked;
     public void changeAvatar() {
         Debug.Log("changing avatar");
 
-        String[] bodyPartsToChange = { "Wolf3D_Hair", "EyeLeft","EyeRight", "Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
+        String[] bodyPartsToChange = { "Wolf3D_Hair", "EyeLeft", "EyeRight", "Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
         foreach (String body in bodyPartsToChange) {
             firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials;
             firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh;
@@ -83,7 +81,7 @@ public class UIScript : MonoBehaviour
         }
 
     }
-        private void OnEnable()
+    private void OnEnable()
     {
 
         valence = new int[numberOfSAM];
@@ -115,7 +113,7 @@ public class UIScript : MonoBehaviour
 
         root.Query<Button>("NextButton").ForEach(Button =>
         {
-            Button.RegisterCallback<ClickEvent>(ev => loadNextPage());
+            Button.RegisterCallback<ClickEvent>(ev => LoadNextPage());
         }
         );
 
@@ -151,13 +149,13 @@ public class UIScript : MonoBehaviour
         mainPane = root.Q("MainPane");
         for (int i = 1; i <= numberOfSAM; i++) {
             var value = 0;
-            root.Query("Arousal"+ i + "TogglePane").Children<Toggle>().ForEach(toggle =>
-            {
-                var currentIndex = i;
-                var currentValue = value;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Arousal",  currentIndex, currentValue, arousal));
-                value++;
-            }
+            root.Query("Arousal" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
+             {
+                 var currentIndex = i;
+                 var currentValue = value;
+                 toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Arousal", currentIndex, currentValue, arousal));
+                 value++;
+             }
             );
 
             value = 0; ;
@@ -165,7 +163,7 @@ public class UIScript : MonoBehaviour
             {
                 var currentIndex = i;
                 var currentValue = value;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Dominance",currentIndex, currentValue, dominance));
+                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Dominance", currentIndex, currentValue, dominance));
                 value++;
             }
             );
@@ -189,12 +187,12 @@ public class UIScript : MonoBehaviour
         {
             var index = 0;
             var currentI = i;
-            root.Query("EmbodimentTogglePaneAC"+i).Children<Toggle>().ForEach(toggle =>
-            {
-                var currentIndex = index;
-                toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC", currentI, currentIndex, VEQ_AC));
-                index++;
-            }
+            root.Query("EmbodimentTogglePaneAC" + i).Children<Toggle>().ForEach(toggle =>
+              {
+                  var currentIndex = index;
+                  toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC", currentI, currentIndex, VEQ_AC));
+                  index++;
+              }
             );
 
             index = 0;
@@ -222,10 +220,10 @@ public class UIScript : MonoBehaviour
         for (int i = 1; i <= numberOfSAM; i++)
         {
             var currentI = i;
-            root.Query("ColorTogglePane"+i).Children<Toggle>().ForEach(toggle =>
-        {
-            toggle.RegisterCallback<ClickEvent>(ev => pickColor(toggle.name, currentI));
-        });
+            root.Query("ColorTogglePane" + i).Children<Toggle>().ForEach(toggle =>
+          {
+              toggle.RegisterCallback<ClickEvent>(ev => pickColor(toggle.name, currentI));
+          });
         }
     }
 
@@ -249,16 +247,16 @@ public class UIScript : MonoBehaviour
     }
 
 
-    private void loadNextPage() {
+    private void LoadNextPage() {
+
         CreateAndWriteFile();
         var curPage = root.Q("Page" + currentPage);
         currentPage++;
         curPage.style.display = DisplayStyle.None;
+        //Play Video first to avoid seeing last image first
+        TriggerVideoIfOnPage();
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
-
-        TriggerVideoIfOnPage();
-
         changeAvatar2();
         disableAllBottomPane();
         if (currentPage == 1 || currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
@@ -312,23 +310,23 @@ public class UIScript : MonoBehaviour
             color.style.backgroundColor = colorNew;
         }
     }
-   
-    private void setOnlyThisToggleActive2(Toggle currentToggle,String currentField, int currentI, int value, int[] toggleFieldName)
+
+    private void setOnlyThisToggleActive2(Toggle currentToggle, String currentField, int currentI, int value, int[] toggleFieldName)
     {
         Debug.Log("Current Panel: " + currentI);
         Debug.Log("Current value chosen: " + value);
-        root.Query(currentField+currentI+"TogglePane").Children<Toggle>().ForEach(toggle =>
-        {
-            toggle.value = false;
-        }
+        root.Query(currentField + currentI + "TogglePane").Children<Toggle>().ForEach(toggle =>
+            {
+                toggle.value = false;
+            }
 );
         currentToggle.value = true;
-        toggleFieldName[currentI-1] = value;
+        toggleFieldName[currentI - 1] = value;
 
         if ((valence[currentI - 1] != -1) && (arousal[currentI - 1] != -1) && (dominance[currentI - 1] != -1))
         {
 
-        enableAllBottomPane(); 
+            enableAllBottomPane();
         }
 
     }
@@ -343,10 +341,28 @@ public class UIScript : MonoBehaviour
         currentToggle.value = true;
         toggleFieldName[currentI - 1] = index;
 
+        if (currentI == 1 || currentI == 2)
+        {
+            if ((toggleFieldName[0] != -1) && (toggleFieldName[1] != -1))
+            {
+                enableAllBottomPane();
+            }
+        }
+
+        if (currentI == 3 || currentI == 4)
+        {
+            if ((toggleFieldName[2] != -1) && (toggleFieldName[3] != -1))
+            {
+                enableAllBottomPane();
+            }
+        }
+
+
+        /*
         if ((toggleFieldName[0] != -1) && (toggleFieldName[1] != -1) && (toggleFieldName[2] != -1) && (toggleFieldName[3] != -1))
         {
             enableAllBottomPane();
-        }
+        }*/
 
     }
 
@@ -401,7 +417,16 @@ public class UIScript : MonoBehaviour
 
     }
 
-    public void appendToCSVFile(int[] array, StringBuilder builder)
+    public void appendToCSVFileFromInt(int[] array, StringBuilder builder)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            builder.Append(',').Append(array[i]);
+        }
+
+    }
+
+    public void appendToCSVFileFromString(String[] array, StringBuilder builder)
     {
         for (int i = 0; i < array.Length; i++)
         {
@@ -414,6 +439,10 @@ public class UIScript : MonoBehaviour
     {
 
         String tableHeader = "Test";
+        tableHeader += ",AROUSAL1,AROUSAL2,AROUSAL3,AROUSAL4,AROUSAL5";
+        tableHeader += ",DOMINANCE1,DOMINANCE2,DOMINANCE3,DOMINANCE4,DOMINANCE5";
+        tableHeader += ",VALENCE1,VALENCE2,VALENCE3,VALENCE4,VALENCE5";
+        tableHeader += ",COLOR1,COLOR2,COLOR3,COLOR4,COLOR5";
         tableHeader += ",VEQ_AC1,VEQ_AC2,VEQ_AC3,VEQ_AC4";
         tableHeader += ",VEQ_CO1,VEQ_CO2,VEQ_CO3,VEQ_CO4";
         tableHeader += ",VEQ_CH1,VEQ_CH2,VEQ_CH3,VEQ_CH4";
@@ -422,9 +451,14 @@ public class UIScript : MonoBehaviour
 
         var sb = new StringBuilder(tableHeader);
         sb.Append("\n").Append("Test");
-        appendToCSVFile(VEQ_AC, sb);
-        appendToCSVFile(VEQ_CO, sb);
-        appendToCSVFile(VEQ_CH, sb);
+        appendToCSVFileFromInt(arousal, sb);
+        appendToCSVFileFromInt(dominance, sb);
+        appendToCSVFileFromInt(valence, sb);
+        appendToCSVFileFromString(colorsPicked, sb);
+        appendToCSVFileFromInt(VEQ_AC, sb);
+        appendToCSVFileFromInt(VEQ_CO, sb);
+        appendToCSVFileFromInt(VEQ_CH, sb);
+
         return sb.ToString();
     }
 

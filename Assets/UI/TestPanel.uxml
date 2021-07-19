@@ -443,7 +443,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page19" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page19" style="height: 100%; display: flex;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:VisualElement name="EmptyPlace" style="height: 15%;" />
                     <ui:Label text="Please choose a color which represents your emotion the best" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: auto; height: auto; -unity-text-align: middle-left; white-space: normal; display: flex;" />
