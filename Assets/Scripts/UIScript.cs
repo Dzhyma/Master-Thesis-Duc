@@ -21,6 +21,7 @@ public class UIScript : MonoBehaviour
     public int[] VEQ_CO;
     public int[] VEQ_CH;
     public String[] colorsPicked;
+    public DateTime[] dates;
 
 
     //Video Stuff
@@ -48,23 +49,46 @@ public class UIScript : MonoBehaviour
     private String path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom";
 
     public String colorPicked;
-    public void changeAvatar() {
+    public void changeAvatarSameGenderFirstSecond() {
+        /*
         Debug.Log("changing avatar");
-
-        String[] bodyPartsToChange = { "Wolf3D_Hair", "EyeLeft", "EyeRight", "Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
+        firstAvatar.SetActive(false);
+        //String[] bodyPartsToChange = { "Wolf3D_Hair", "EyeLeft", "EyeRight", "Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
+        String[] bodyPartsToChange = { "Wolf3D_Hair","Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
         foreach (String body in bodyPartsToChange) {
             firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials;
             firstAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh = secondAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh;
         }
+
+        firstAvatar.SetActive(true);
+                */
+        firstAvatar.SetActive(false);
+        secondAvatar.SetActive(true);
     }
 
-    //Change von Male to Female
-    public void changeAvatar2()
+    public void changeAvatarSameGenderThirdFourth()
     {
-        firstAvatar.SetActive(false);
+        Debug.Log("changing avatar");
+        /*
+        String[] bodyPartsToChange = { "Wolf3D_Hair", "EyeLeft", "EyeRight", "Wolf3D_Body", "Wolf3D_Head", "Wolf3D_Outfit_Bottom", "Wolf3D_Outfit_Footwear", "Wolf3D_Outfit_Top", "Wolf3D_Teeth" };
+        foreach (String body in bodyPartsToChange)
+        {
+            thirdAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials = fourthAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().materials;
+            thirdAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh = fourthAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        }*/
+        thirdAvatar.SetActive(false);
+        fourthAvatar.SetActive(true);
+    }
+
+    //Change von Female to Male
+    public void changeAvatarDifferentGender()
+    {
+        secondAvatar.SetActive(false);
+        femaleChair.SetActive(false);
+        maleChair.SetActive(true);
         thirdAvatar.SetActive(true);
-        maleChair.SetActive(false);
-        femaleChair.SetActive(true);
+
+
     }
 
     GameObject GetChildWithName(GameObject obj, string name)
@@ -99,6 +123,9 @@ public class UIScript : MonoBehaviour
         Populate(VEQ_AC, -1);
         Populate(VEQ_CO, -1);
         Populate(VEQ_CH, -1);
+
+        dates = new DateTime[6];
+        dates[0] = DateTime.Now;
 
 
         root = GetComponent<UIDocument>().rootVisualElement;
@@ -249,15 +276,21 @@ public class UIScript : MonoBehaviour
 
     private void LoadNextPage() {
 
-        CreateAndWriteFile();
+ 
         var curPage = root.Q("Page" + currentPage);
         currentPage++;
         curPage.style.display = DisplayStyle.None;
         //Play Video first to avoid seeing last image first
         TriggerVideoIfOnPage();
+        ChangeAvatarIfOnPage();
+        WriteDateOnPage();
+        if (currentPage == 26) {
+            CreateAndWriteFile();
+        }
+
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
-        changeAvatar2();
+        ChangeAvatarIfOnPage();
         disableAllBottomPane();
         if (currentPage == 1 || currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
             enableAllBottomPane();
@@ -265,6 +298,37 @@ public class UIScript : MonoBehaviour
         }
     }
 
+    private void WriteDateOnPage() {
+        if (currentPage == 3)
+        {
+            dates[1] = DateTime.Now;
+        }
+
+        if (currentPage == 9)
+        {
+            dates[2] = DateTime.Now;
+        }
+
+        if (currentPage == 13)
+        {
+            dates[3] = DateTime.Now;
+        }
+
+        if (currentPage == 17)
+        {
+            dates[4] = DateTime.Now;
+        }
+
+
+        if (currentPage == 20)
+        {
+            dates[5] = DateTime.Now;
+        }
+
+    }
+    private void ChangeAvatarIfOnPage() {
+//For now added in TriggerVideo method
+    }
 
     private void TriggerVideoIfOnPage() {
         if (currentPage == 2)
@@ -277,18 +341,21 @@ public class UIScript : MonoBehaviour
         {
             videoPlayer2.Play();
             videoPlayer2.loopPointReached += EndReached;
+            changeAvatarSameGenderFirstSecond();
         }
 
         if (currentPage == 12)
         {
             videoPlayer3.Play();
             videoPlayer3.loopPointReached += EndReached;
+            changeAvatarDifferentGender();
         }
 
         if (currentPage == 16)
         {
             videoPlayer4.Play();
             videoPlayer4.loopPointReached += EndReached;
+            changeAvatarSameGenderThirdFourth();
         }
 
 
@@ -435,6 +502,15 @@ public class UIScript : MonoBehaviour
 
     }
 
+    public void appendToCSVFileFromDates(DateTime[] array, StringBuilder builder)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            builder.Append(',').Append(array[i]);
+        }
+
+    }
+
     public string ResultToCSV()
     {
 
@@ -446,6 +522,7 @@ public class UIScript : MonoBehaviour
         tableHeader += ",VEQ_AC1,VEQ_AC2,VEQ_AC3,VEQ_AC4";
         tableHeader += ",VEQ_CO1,VEQ_CO2,VEQ_CO3,VEQ_CO4";
         tableHeader += ",VEQ_CH1,VEQ_CH2,VEQ_CH3,VEQ_CH4";
+        tableHeader += ",Date1,Date2,Date3,Date4,Date5,Date6";
 
 
 
@@ -458,6 +535,7 @@ public class UIScript : MonoBehaviour
         appendToCSVFileFromInt(VEQ_AC, sb);
         appendToCSVFileFromInt(VEQ_CO, sb);
         appendToCSVFileFromInt(VEQ_CH, sb);
+        appendToCSVFileFromDates(dates, sb);
 
         return sb.ToString();
     }
