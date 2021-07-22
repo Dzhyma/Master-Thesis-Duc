@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.IO;
 using System.Text;
+using System.Collections;
 
 public class UIScript : MonoBehaviour
 {
@@ -46,9 +47,8 @@ public class UIScript : MonoBehaviour
 
 
     //Path where to save file to
-    private String path = @"C:\Users\Nguyen\Desktop\Master\Result\MyTestFrom";
+    private String path = @"C:\Users\unibwlab\Desktop\Duc\Result\MyTestFrom";
 
-    public String colorPicked;
     public void changeAvatarSameGenderFirstSecond() {
         /*
         Debug.Log("changing avatar");
@@ -291,9 +291,12 @@ public class UIScript : MonoBehaviour
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
         ChangeAvatarIfOnPage();
-        disableAllBottomPane();
-        if (currentPage == 1 || currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
-            enableAllBottomPane();
+        if (currentPage != 1) {
+            disableAllBottomPane();
+        }
+
+        if (currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
+            StartCoroutine(EnableBottomPaneAfterSeconds(30));
 
         }
     }
@@ -541,16 +544,24 @@ public class UIScript : MonoBehaviour
     }
 
     private void pickColor(String colorPickedFrom, int currentIndex) {
-        colorPicked = colorPickedFrom;
         colorsPicked[currentIndex-1] = colorPickedFrom;
         root.Query("ColorTogglePane"+currentIndex).Children<Toggle>().ForEach(toggle =>
         {
             toggle.value = false;
-            if (toggle.name.Equals(colorPicked)) {
+            if (toggle.name.Equals(colorPickedFrom)) {
                 toggle.value = true;
             }
         });
         enableAllBottomPane();
 
     }
+
+
+
+ 
+ IEnumerator EnableBottomPaneAfterSeconds(int secs)
+ {
+     yield return new WaitForSeconds(secs);
+        enableAllBottomPane();
+ }
 }
