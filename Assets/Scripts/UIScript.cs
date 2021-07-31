@@ -10,7 +10,7 @@ public class UIScript : MonoBehaviour
     private Button button_next;
     private Button button_minimize;
     private VisualElement mainPane;
-    public int currentPage = 19;
+    public int currentPage = 7;
     public VisualElement root;
     public int numberOfSAM = 5;
     public int numberOfPresence = 19;
@@ -65,6 +65,8 @@ public class UIScript : MonoBehaviour
         firstAvatar.SetActive(true);
                 */
         firstAvatar.SetActive(false);
+        firstAvatar.GetComponent<VRRig>().chair.SetActive(false);
+        secondAvatar.GetComponent<VRRig>().chair.SetActive(true);
         secondAvatar.SetActive(true);
     }
 

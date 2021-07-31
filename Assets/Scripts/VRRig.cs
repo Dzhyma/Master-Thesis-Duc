@@ -7,8 +7,8 @@ using UnityEngine;
 public class VRMap {
     public Transform vrTarget;
     public Transform rigTarget;
-    public Vector3 trackingPositionOffset;
-    public Vector3 trackingRotationOffset;
+    public Vector3 trackingPositionOffset = new Vector3(0, 0.02f, -0.05f);
+    public Vector3 trackingRotationOffset = new Vector3(90,0,0);
 
 
     public void Map() {
@@ -22,7 +22,7 @@ public class VRRig : MonoBehaviour
     public VRMap head;
     public VRMap leftHand;
     public VRMap rightHand;
-    public float turnSmooth = 1.0f;
+    public float turnSmooth = 5.0f;
     public GameObject chair;
 
     public Transform headContraint;
