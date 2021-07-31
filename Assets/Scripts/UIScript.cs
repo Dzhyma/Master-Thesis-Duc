@@ -13,6 +13,8 @@ public class UIScript : MonoBehaviour
     public int currentPage = 19;
     public VisualElement root;
     public int numberOfSAM = 5;
+    public int numberOfPresence = 19;
+    public int[] presenceResult;
     public UQueryBuilder<VisualElement> test;
     public int[] arousal;
     public int[] dominance;
@@ -113,6 +115,7 @@ public class UIScript : MonoBehaviour
         dominance = new int[numberOfSAM];
         colorsPicked = new string[numberOfSAM];
 
+
         Populate(valence, -1);
         Populate(arousal, -1);
         Populate(dominance, -1);
@@ -123,6 +126,11 @@ public class UIScript : MonoBehaviour
         Populate(VEQ_AC, -1);
         Populate(VEQ_CO, -1);
         Populate(VEQ_CH, -1);
+
+        presenceResult = new int[numberOfPresence];
+        Populate(presenceResult,-1) ;
+
+
 
         dates = new DateTime[6];
         dates[0] = DateTime.Now;
@@ -174,34 +182,35 @@ public class UIScript : MonoBehaviour
 
 
         mainPane = root.Q("MainPane");
-        for (int i = 1; i <= numberOfSAM; i++) {
-            var value = 0;
+        for (int i = 1; i <= numberOfSAM; i++)
+        {
+            var value = 1;
             root.Query("Arousal" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
              {
                  var currentIndex = i;
                  var currentValue = value;
-                 toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Arousal", currentIndex, currentValue, arousal));
+                 toggle.RegisterCallback<ClickEvent>(ev => SetOnlyThisToggleActiveSAM(toggle, "Arousal", currentIndex, currentValue, arousal));
                  value++;
              }
             );
 
-            value = 0; ;
+            value = 1; ;
             root.Query("Dominance" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
             {
                 var currentIndex = i;
                 var currentValue = value;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Dominance", currentIndex, currentValue, dominance));
+                toggle.RegisterCallback<ClickEvent>(ev => SetOnlyThisToggleActiveSAM(toggle, "Dominance", currentIndex, currentValue, dominance));
                 value++;
             }
             );
 
 
-            value = 0;
+            value = 1;
             root.Query("Valence" + i + "TogglePane").Children<Toggle>().ForEach(toggle =>
             {
                 var currentIndex = i;
                 var currentValue = value;
-                toggle.RegisterCallback<ClickEvent>(ev => setOnlyThisToggleActive2(toggle, "Valence", currentIndex, currentValue, valence));
+                toggle.RegisterCallback<ClickEvent>(ev => SetOnlyThisToggleActiveSAM(toggle, "Valence", currentIndex, currentValue, valence));
                 value++;
             }
             );
@@ -212,7 +221,7 @@ public class UIScript : MonoBehaviour
         //Set AC from VEQ
         for (int i = 1; i <= 4; i++)
         {
-            var index = 0;
+            var index = 1;
             var currentI = i;
             root.Query("EmbodimentTogglePaneAC" + i).Children<Toggle>().ForEach(toggle =>
               {
@@ -222,7 +231,7 @@ public class UIScript : MonoBehaviour
               }
             );
 
-            index = 0;
+            index = 1;
             root.Query("EmbodimentTogglePaneCO" + i).Children<Toggle>().ForEach(toggle =>
             {
                 var currentIndex = index;
@@ -231,7 +240,7 @@ public class UIScript : MonoBehaviour
             }
             );
 
-            index = 0; ;
+            index = 1; ;
             root.Query("EmbodimentTogglePaneCH" + i).Children<Toggle>().ForEach(toggle =>
             {
                 var currentIndex = index;
@@ -252,6 +261,21 @@ public class UIScript : MonoBehaviour
               toggle.RegisterCallback<ClickEvent>(ev => pickColor(toggle.name, currentI));
           });
         }
+
+        for (int i = 1; i <= numberOfPresence; i++)
+        {
+            var value = 1;
+            root.Query("PresenceTogglePane"+i).Children<Toggle>().ForEach(toggle =>
+            {
+                var currentIndex = i;
+                var currentValue = value;
+                toggle.RegisterCallback<ClickEvent>(ev => SetOnlyThisToggleActivePresence(toggle, currentIndex, currentValue));
+                value++;
+            }
+            );
+
+        }
+
     }
 
     private void ShowHelpPage()
@@ -284,7 +308,9 @@ public class UIScript : MonoBehaviour
         TriggerVideoIfOnPage();
         ChangeAvatarIfOnPage();
         WriteDateOnPage();
-        if (currentPage == 26) {
+
+        //TODO: Set final page
+        if (currentPage == 100) {
             CreateAndWriteFile();
         }
 
@@ -381,7 +407,7 @@ public class UIScript : MonoBehaviour
         }
     }
 
-    private void setOnlyThisToggleActive2(Toggle currentToggle, String currentField, int currentI, int value, int[] toggleFieldName)
+    private void SetOnlyThisToggleActiveSAM(Toggle currentToggle, String currentField, int currentI, int value, int[] toggleFieldName)
     {
         Debug.Log("Current Panel: " + currentI);
         Debug.Log("Current value chosen: " + value);
@@ -401,6 +427,36 @@ public class UIScript : MonoBehaviour
 
     }
 
+
+    private void SetOnlyThisToggleActivePresence(Toggle currentToggle, int currentI, int value)
+    {
+        Debug.Log("PresenceTogglePane" + currentI);
+        Debug.Log("Current value chosen: " + value);
+        root.Query("PresenceTogglePane" + currentI).Children<Toggle>().ForEach(toggle =>
+        {
+            toggle.value = false;
+        }
+);
+        currentToggle.value = true;
+        presenceResult[currentI - 1] = value;
+
+        for (int i = 1; i <= 6; i++) {
+            if (currentI == 1*i || currentI == 2*i || currentI == 3*i)
+            {
+                if ((presenceResult[1 * i - 1] != -1) && (presenceResult[2 * i - 1] != -1) && (presenceResult[3 * i - 1] != -1))
+                {
+                    enableAllBottomPane();
+                }
+            }
+        }
+
+        if (currentI == 19)
+        {
+                enableAllBottomPane();
+        }
+
+
+    }
     private void setThisToggleActiveVEQ(Toggle currentToggle, String currentField, int currentI, int index, int[] toggleFieldName) {
         Debug.Log("Current Index chosen: " + currentI);
         root.Query(currentField + currentI).Children<Toggle>().ForEach(toggle =>
@@ -426,14 +482,6 @@ public class UIScript : MonoBehaviour
                 enableAllBottomPane();
             }
         }
-
-
-        /*
-        if ((toggleFieldName[0] != -1) && (toggleFieldName[1] != -1) && (toggleFieldName[2] != -1) && (toggleFieldName[3] != -1))
-        {
-            enableAllBottomPane();
-        }*/
-
     }
 
     void EndReached(UnityEngine.Video.VideoPlayer vp)
