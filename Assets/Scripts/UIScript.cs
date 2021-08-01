@@ -14,6 +14,7 @@ public class UIScript : MonoBehaviour
     public VisualElement root;
     public int numberOfSAM = 5;
     public int numberOfPresence = 19;
+    private int numberOfPages = 33;
     public int[] presenceResult;
     public UQueryBuilder<VisualElement> test;
     public int[] arousal;
@@ -24,7 +25,7 @@ public class UIScript : MonoBehaviour
     public int[] VEQ_CO;
     public int[] VEQ_CH;
     public String[] colorsPicked;
-    public DateTime[] dates;
+    public String[] dates;
 
 
     //Video Stuff
@@ -49,7 +50,9 @@ public class UIScript : MonoBehaviour
 
 
     //Path where to save file to
-    private String path = @"C:\Users\unibwlab\Desktop\Duc\Result\MyTestFrom";
+    //private String path = @"C:\Users\unibwlab\Desktop\Duc\Result\MyTestFrom";
+
+    private String path = @"C:\Users\Nguyen\Desktop\Master\Result";
 
     public void changeAvatarSameGenderFirstSecond() {
         /*
@@ -81,6 +84,8 @@ public class UIScript : MonoBehaviour
             thirdAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh = fourthAvatar.transform.Find(body).GetComponent<SkinnedMeshRenderer>().sharedMesh;
         }*/
         thirdAvatar.SetActive(false);
+        thirdAvatar.GetComponent<VRRig>().chair.SetActive(false);
+        fourthAvatar.GetComponent<VRRig>().chair.SetActive(true);
         fourthAvatar.SetActive(true);
     }
 
@@ -88,8 +93,8 @@ public class UIScript : MonoBehaviour
     public void changeAvatarDifferentGender()
     {
         secondAvatar.SetActive(false);
-        femaleChair.SetActive(false);
-        maleChair.SetActive(true);
+        secondAvatar.GetComponent<VRRig>().chair.SetActive(false);
+        thirdAvatar.GetComponent<VRRig>().chair.SetActive(true);
         thirdAvatar.SetActive(true);
 
 
@@ -134,8 +139,8 @@ public class UIScript : MonoBehaviour
 
 
 
-        dates = new DateTime[6];
-        dates[0] = DateTime.Now;
+        dates = new String[numberOfPages];
+        dates[0] = DateTime.Now.ToString("HH:mm:ss");
 
 
         root = GetComponent<UIDocument>().rootVisualElement;
@@ -312,7 +317,7 @@ public class UIScript : MonoBehaviour
         WriteDateOnPage();
 
         //TODO: Set final page
-        if (currentPage == 100) {
+        if (currentPage == 2) {
             CreateAndWriteFile();
         }
 
@@ -324,38 +329,14 @@ public class UIScript : MonoBehaviour
         }
 
         if (currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
-            StartCoroutine(EnableBottomPaneAfterSeconds(30));
+            StartCoroutine(EnableBottomPaneAfterSeconds(1));
 
         }
     }
 
     private void WriteDateOnPage() {
-        if (currentPage == 3)
-        {
-            dates[1] = DateTime.Now;
-        }
 
-        if (currentPage == 9)
-        {
-            dates[2] = DateTime.Now;
-        }
-
-        if (currentPage == 13)
-        {
-            dates[3] = DateTime.Now;
-        }
-
-        if (currentPage == 17)
-        {
-            dates[4] = DateTime.Now;
-        }
-
-
-        if (currentPage == 20)
-        {
-            dates[5] = DateTime.Now;
-        }
-
+        dates[currentPage-1] = DateTime.Now.ToString("HH:mm:ss");
     }
     private void ChangeAvatarIfOnPage() {
 //For now added in TriggerVideo method
@@ -519,6 +500,7 @@ public class UIScript : MonoBehaviour
         string filePath = path+ DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".txt";
         if (!File.Exists(filePath))
         {
+            Debug.Log("Writing file " +filePath );
             // Create a file to write to.
             using (StreamWriter sw = File.CreateText(filePath))
             {
@@ -588,7 +570,7 @@ public class UIScript : MonoBehaviour
         appendToCSVFileFromInt(VEQ_AC, sb);
         appendToCSVFileFromInt(VEQ_CO, sb);
         appendToCSVFileFromInt(VEQ_CH, sb);
-        appendToCSVFileFromDates(dates, sb);
+        appendToCSVFileFromString(dates, sb);
 
         return sb.ToString();
     }
