@@ -21,7 +21,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="Page3" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="max-height: none; height: 95%;">
-                    <ui:VisualElement name="Arousal1" style="width: 100%; height: 33%; border-bottom-width: 1px; border-left-color: rgba(0, 0, 0, 255); border-right-color: rgba(0, 0, 0, 255); border-top-color: rgba(0, 0, 0, 255); border-bottom-color: rgba(0, 0, 0, 255);">
+                    <ui:VisualElement name="Arousal1" style="width: 100%; height: 33%; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Arousal" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -38,7 +38,7 @@
                             <ui:Toggle name="Arousal1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Dominance1" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Dominance1" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Dominance" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -55,7 +55,7 @@
                             <ui:Toggle name="Dominance1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Valence1" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Valence1" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Valence" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -120,7 +120,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="Page6" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
-                    <ui:VisualElement name="Arousal2" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Arousal2" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Arousal" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -137,7 +137,7 @@
                             <ui:Toggle name="Arousal1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Dominance2" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Dominance2" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Dominance" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -154,7 +154,7 @@
                             <ui:Toggle name="Dominance1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Valence2" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Valence2" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Valence" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -171,7 +171,7 @@
                             <ui:Toggle name="Valence1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%; border-bottom-color: rgba(0, 0, 0, 255);">
+                    <ui:VisualElement name="SAMPane" style="flex-direction: row-reverse; height: 5%; justify-content: space-between; width: 100%; border-bottom-color: rgb(0, 0, 0);">
                         <ui:VisualElement name="BottomPane" style="flex-direction: row-reverse; height: auto; justify-content: space-between; width: 50%;">
                             <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                         </ui:VisualElement>
@@ -181,7 +181,7 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page7" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page7" style="height: 100%; display: flex;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:VisualElement name="EmptyPlace" style="height: 15%;" />
                     <ui:Label text="Please choose a color which represents your emotion the best" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: auto; height: auto; -unity-text-align: middle-left; white-space: normal; display: flex;" />
@@ -225,7 +225,7 @@
             </ui:VisualElement>
             <ui:VisualElement name="Page10" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
-                    <ui:VisualElement name="Arousal3" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Arousal3" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Arousal" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -242,7 +242,7 @@
                             <ui:Toggle name="Arousal1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Dominance3" style="width: 100%; height: 33%; border-bottom-width: 1px; border-bottom-color: rgba(0, 0, 0, 255);">
+                    <ui:VisualElement name="Dominance3" style="width: 100%; height: 33%; border-bottom-width: 1px; border-bottom-color: rgb(0, 0, 0);">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Dominance" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -259,7 +259,7 @@
                             <ui:Toggle name="Dominance1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Valence3" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Valence3" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Valence&#10;" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -433,9 +433,9 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page18" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page18" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="max-height: none; height: 95%; display: flex;">
-                    <ui:VisualElement name="Arousal5" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Arousal5" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Arousal" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -452,7 +452,7 @@
                             <ui:Toggle name="Arousal1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Dominance5" style="width: 100%; height: 33%; border-bottom-color: rgba(0, 0, 0, 255); border-bottom-width: 1px;">
+                    <ui:VisualElement name="Dominance5" style="width: 100%; height: 33%; border-bottom-color: rgb(0, 0, 0); border-bottom-width: 1px;">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Dominance" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
@@ -469,7 +469,7 @@
                             <ui:Toggle name="Dominance1Toggle" value="false" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:VisualElement name="Valence5" style="width: 100%; height: 33%; border-bottom-width: 1px; border-bottom-color: rgba(0, 0, 0, 255);">
+                    <ui:VisualElement name="Valence5" style="width: 100%; height: 33%; border-bottom-width: 1px; border-bottom-color: rgb(0, 0, 0);">
                         <ui:VisualElement style="height: 11%;">
                             <ui:Label text="Valence" display-tooltip-when-elided="true" style="font-size: 30px;" />
                         </ui:VisualElement>
