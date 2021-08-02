@@ -27,6 +27,10 @@ public class UIScript : MonoBehaviour
     public String[] colorsPicked;
     public String[] dates;
 
+    public GameObject arrow1;
+    public GameObject arrow2;
+    public GameObject arrow3;
+
 
     //Video Stuff
 
@@ -329,7 +333,8 @@ public class UIScript : MonoBehaviour
         }
 
         if (currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
-            StartCoroutine(EnableBottomPaneAfterSeconds(1));
+            enableAllArrow();
+            StartCoroutine(EnableBottomPaneAfterSeconds(30));
 
         }
     }
@@ -589,11 +594,21 @@ public class UIScript : MonoBehaviour
     }
 
 
-
+    public void enableAllArrow() {
+        arrow1.SetActive(true);
+        arrow2.SetActive(true);
+        arrow3.SetActive(true);
+    }
  
  IEnumerator EnableBottomPaneAfterSeconds(int secs)
  {
      yield return new WaitForSeconds(secs);
+        arrow1.GetComponent<ArrowAnimation>().ResetPosition();
+        arrow1.SetActive(false);
+        arrow2.GetComponent<ArrowAnimation>().ResetPosition();
+        arrow2.SetActive(false);
+        arrow3.GetComponent<ArrowAnimation>().ResetPosition();
+        arrow3.SetActive(false);
         enableAllBottomPane();
  }
 }

@@ -1,11 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="StyleSheet.uss" />
     <ui:VisualElement name="Content" style="left: 5%; top: 5%; right: 5%; bottom: 5%; width: 90%; height: 90%; background-color: rgba(255, 255, 255, 0.4); position: relative; display: flex;">
-        <ui:VisualElement name="TopPane" style="flex-direction: row-reverse; height: 10%; display: none;">
-            <ui:Button text="Minimize" display-tooltip-when-elided="true" name="MinimizeButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
-        </ui:VisualElement>
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="Hi and welcome to the study effect of avatar appearance and gender on emotion. &#10;&#10;You can freely check your surroundings and have a look at the mirror. To be able to interact with the UI just press the middle button witht he thumb finger so the controllers will appear. With the laserpointer and the back button where your index finger is located you can interact with the UI. Please choose next to continue the study." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
@@ -108,7 +105,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: auto; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page5" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page5" style="height: 100%; display: flex;">
                 <ui:VisualElement name="MainContent" style="height: 90%; justify-content: center;">
                     <ui:Label text="Try to think of another happy/sad memory different from before. You can recall your memory how you like e.g. while looking at the mirror. When you are finished continue by pressing the Next button." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 34px; white-space: normal; -unity-text-align: middle-left; height: 60%;" />
                     <ui:VisualElement style="height: 10%;" />
