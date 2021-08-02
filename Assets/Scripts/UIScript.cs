@@ -50,9 +50,9 @@ public class UIScript : MonoBehaviour
 
 
     //Path where to save file to
-    //private String path = @"C:\Users\unibwlab\Desktop\Duc\Result\MyTestFrom";
+    private String path = @"C:\Users\unibwlab\Desktop\Master Thesis Duc\Result";
 
-    private String path = @"C:\Users\Nguyen\Desktop\Master\Result";
+    //private String path = @"C:\Users\Nguyen\Desktop\Master\Result";
 
     public void changeAvatarSameGenderFirstSecond() {
         /*
