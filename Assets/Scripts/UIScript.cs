@@ -10,10 +10,10 @@ public class UIScript : MonoBehaviour
     private Button button_next;
     private Button button_minimize;
     private VisualElement mainPane;
-    public int currentPage = 7;
+    public int currentPage = 1;
     public VisualElement root;
-    public int numberOfSAM = 5;
-    public int numberOfPresence = 19;
+    private int numberOfSAM = 5;
+    private int numberOfPresence = 19;
     private int numberOfPages = 33;
     public int[] presenceResult;
     public UQueryBuilder<VisualElement> test;
@@ -54,9 +54,9 @@ public class UIScript : MonoBehaviour
 
 
     //Path where to save file to
-    private String path = @"C:\Users\unibwlab\Desktop\Master Thesis Duc\Result";
+    //private String path = @"C:\Users\unibwlab\Desktop\Master Thesis Duc\Result";
 
-    //private String path = @"C:\Users\Nguyen\Desktop\Master\Result";
+    private String path = @"C:\Users\Nguyen\Desktop\Master\Result\";
 
     public void changeAvatarSameGenderFirstSecond() {
         /*
@@ -321,7 +321,7 @@ public class UIScript : MonoBehaviour
         WriteDateOnPage();
 
         //TODO: Set final page
-        if (currentPage == 2) {
+        if (currentPage == numberOfPages) {
             CreateAndWriteFile();
         }
 
@@ -334,7 +334,7 @@ public class UIScript : MonoBehaviour
 
         if (currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
             enableAllArrow();
-            StartCoroutine(EnableBottomPaneAfterSeconds(30));
+            StartCoroutine(EnableBottomPaneAfterSeconds(5));
 
         }
     }
@@ -562,7 +562,13 @@ public class UIScript : MonoBehaviour
         tableHeader += ",VEQ_AC1,VEQ_AC2,VEQ_AC3,VEQ_AC4";
         tableHeader += ",VEQ_CO1,VEQ_CO2,VEQ_CO3,VEQ_CO4";
         tableHeader += ",VEQ_CH1,VEQ_CH2,VEQ_CH3,VEQ_CH4";
-        tableHeader += ",Date1,Date2,Date3,Date4,Date5,Date6";
+        for (int i = 1; i <= numberOfPresence; i++)
+        {
+            tableHeader += ",Presence" + i;
+        }
+        for (int i = 1; i <= numberOfPages; i++) {
+            tableHeader += ",Date" + i;
+        }
 
 
 
@@ -575,6 +581,7 @@ public class UIScript : MonoBehaviour
         appendToCSVFileFromInt(VEQ_AC, sb);
         appendToCSVFileFromInt(VEQ_CO, sb);
         appendToCSVFileFromInt(VEQ_CH, sb);
+        appendToCSVFileFromInt(presenceResult, sb);
         appendToCSVFileFromString(dates, sb);
 
         return sb.ToString();
