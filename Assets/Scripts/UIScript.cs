@@ -334,7 +334,7 @@ public class UIScript : MonoBehaviour
 
         if (currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
             enableAllArrow();
-            StartCoroutine(EnableBottomPaneAfterSeconds(5));
+            StartCoroutine(EnableBottomPaneAfterSeconds(30));
 
         }
     }
