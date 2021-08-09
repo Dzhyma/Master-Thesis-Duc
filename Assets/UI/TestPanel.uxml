@@ -2,7 +2,7 @@
     <Style src="StyleSheet.uss" />
     <ui:VisualElement name="Content" style="left: 5%; top: 5%; right: 5%; bottom: 5%; width: 90%; height: 90%; background-color: rgba(255, 255, 255, 0.4); position: relative; display: flex;">
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="Hi and welcome to the study effect of avatar appearance and gender on emotion. &#10;&#10;You can freely check your surroundings and have a look at the mirror. To be able to interact with the UI just press the middle button with the thumb finger so the pointer will appear. With the pointer and the back button where your index finger is located you can interact with the UI. Please choose next to continue the study." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
@@ -912,13 +912,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="No control" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately " display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="In control" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -937,13 +937,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="No response" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very responsive" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -962,13 +962,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not natural" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very natural" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -994,13 +994,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="A lot" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1019,13 +1019,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very natural" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1076,13 +1076,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="A lot" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1101,13 +1101,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Definitely" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1126,13 +1126,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately " display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Completely" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1158,13 +1158,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1183,13 +1183,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not close" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately close" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very close" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1208,13 +1208,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very good" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1223,7 +1223,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: 100%; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page30" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page30" style="height: 100%; display: flex;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:VisualElement name="PresenceQuestion" style="justify-content: flex-start; align-items: auto; flex-wrap: wrap; flex-direction: column; height: 33%; display: flex; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
                         <ui:VisualElement name="DescriptionQuestion" style="width: 100%; display: flex; height: 50%;">
@@ -1240,13 +1240,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not involved" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately involved" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very involved" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1265,13 +1265,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="No delay" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderate delay" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Lot of delay" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1290,13 +1290,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Slow" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately quickly" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very quickly" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1322,13 +1322,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not proficient" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately proficient" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very proficient" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1347,13 +1347,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="A lot" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1372,13 +1372,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="A lot" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -1404,13 +1404,13 @@
                         </ui:VisualElement>
                         <ui:VisualElement style="width: 100%; height: 0; flex-direction: row;">
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Not Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Not at all" display-tooltip-when-elided="true" style="-unity-text-align: upper-left; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Moderately Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Moderately " display-tooltip-when-elided="true" style="-unity-text-align: upper-center; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                             <ui:VisualElement style="width: 33%;">
-                                <ui:Label text="Very Compelling" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
+                                <ui:Label text="Very good" display-tooltip-when-elided="true" style="-unity-text-align: upper-right; font-size: 30px; width: 100%;" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
