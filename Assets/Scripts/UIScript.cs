@@ -350,6 +350,7 @@ public class UIScript : MonoBehaviour
     private void TriggerVideoIfOnPage() {
         if (currentPage == 2)
         {
+            changeAvatarSameGenderFirstSecond();
             videoPlayer1.Play();
             videoPlayer1.loopPointReached += EndReached;
         }
