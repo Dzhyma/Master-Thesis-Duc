@@ -54,7 +54,7 @@ public class UIScript : MonoBehaviour
 
 
     //Path where to save file to
-    private String path = @"C:\Users\unibwlab\Desktop\Master Thesis Duc\Result";
+    private String path = @"C:\Users\unibwlab\Desktop\Master Thesis Duc\Result\";
 
     //private String path = @"C:\Users\Nguyen\Desktop\Master\Result\";
 
@@ -319,7 +319,6 @@ public class UIScript : MonoBehaviour
         TriggerVideoIfOnPage();
         ChangeAvatarIfOnPage();
         WriteDateOnPage();
-
         //TODO: Set final page
         if (currentPage == numberOfPages) {
             CreateAndWriteFile();
@@ -350,7 +349,6 @@ public class UIScript : MonoBehaviour
     private void TriggerVideoIfOnPage() {
         if (currentPage == 2)
         {
-            changeAvatarSameGenderFirstSecond();
             videoPlayer1.Play();
             videoPlayer1.loopPointReached += EndReached;
         }
