@@ -12,7 +12,7 @@ namespace Wolf3D.ReadyPlayerMe.AvatarSDK
     public class VoiceHandlerNew : MonoBehaviour
     {
         private const string MouthOpenBlendshapeName = "mouthOpen";
-        private const int AmplituteMultiplier = 100;
+        private const int AmplituteMultiplier = 75;
         private const int AudioSampleLength = 4096;
 
         private AudioSource audioSource;
