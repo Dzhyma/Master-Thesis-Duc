@@ -2,7 +2,7 @@
     <Style src="StyleSheet.uss" />
     <ui:VisualElement name="Content" style="left: 5%; top: 5%; right: 5%; bottom: 5%; width: 90%; height: 90%; background-color: rgba(255, 255, 255, 0.4); position: relative; display: flex;">
         <ui:VisualElement name="MainPane" style="height: 100%;">
-            <ui:VisualElement name="Page1" style="height: 100%; display: none;">
+            <ui:VisualElement name="Page1" style="height: 100%; display: flex;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="Hi and welcome to the study effect of avatar appearance and gender on emotion. &#10;&#10;You can freely check your surroundings and have a look at the mirror. To be able to interact with the UI just press the middle button with the thumb finger so the pointer will appear. With the pointer and the back button where your index finger is located you can interact with the UI. Please choose next to continue the study." display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
@@ -1419,7 +1419,7 @@
                     <ui:Button text="Next" display-tooltip-when-elided="true" name="NextButton" class="bottom-right" style="width: 20%; height: 100%; -unity-text-align: middle-center; right: auto; left: auto; align-items: auto; white-space: nowrap; display: flex; visibility: visible; font-size: 36px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="Page33" style="height: 100%; display: flex;">
+            <ui:VisualElement name="Page33" style="height: 100%; display: none;">
                 <ui:VisualElement name="MainContent" style="height: 90%;">
                     <ui:Label text="Thank you for participating in the study. You can call me in now :)" display-tooltip-when-elided="true" enable-rich-text="true" style="font-size: 40px; width: 100%; height: 100%; -unity-text-align: middle-left; white-space: normal;" />
                 </ui:VisualElement>
