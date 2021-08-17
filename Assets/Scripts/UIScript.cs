@@ -14,16 +14,28 @@ public class UIScript : MonoBehaviour
     public VisualElement root;
     private int numberOfSAM = 5;
     private int numberOfPresence = 19;
-    private int numberOfPages = 33;
+    private int numberOfPages = 51;
     public int[] presenceResult;
     public UQueryBuilder<VisualElement> test;
     public int[] arousal;
     public int[] dominance;
     public int[] valence;
 
-    public int[] VEQ_AC;
-    public int[] VEQ_CO;
-    public int[] VEQ_CH;
+    public int[] VEQ_AC1;
+    public int[] VEQ_CO1;
+    public int[] VEQ_CH1;
+
+    public int[] VEQ_AC2;
+    public int[] VEQ_CO2;
+    public int[] VEQ_CH2;
+
+    public int[] VEQ_AC3;
+    public int[] VEQ_CO3;
+    public int[] VEQ_CH3;
+
+    public int[] VEQ_AC4;
+    public int[] VEQ_CO4;
+    public int[] VEQ_CH4;
     public String[] colorsPicked;
     public String[] dates;
 
@@ -131,12 +143,34 @@ public class UIScript : MonoBehaviour
         Populate(arousal, -1);
         Populate(dominance, -1);
 
-        VEQ_AC = new int[4];
-        VEQ_CO = new int[4];
-        VEQ_CH = new int[4];
-        Populate(VEQ_AC, -1);
-        Populate(VEQ_CO, -1);
-        Populate(VEQ_CH, -1);
+        VEQ_AC1 = new int[4];
+        VEQ_CO1 = new int[4];
+        VEQ_CH1 = new int[4];
+        Populate(VEQ_AC1, -1);
+        Populate(VEQ_CO1, -1);
+        Populate(VEQ_CH1, -1);
+
+
+        VEQ_AC2 = new int[4];
+        VEQ_CO2 = new int[4];
+        VEQ_CH2 = new int[4];
+        Populate(VEQ_AC2, -1);
+        Populate(VEQ_CO2, -1);
+        Populate(VEQ_CH2, -1);
+
+        VEQ_AC3 = new int[4];
+        VEQ_CO3 = new int[4];
+        VEQ_CH3 = new int[4];
+        Populate(VEQ_AC3, -1);
+        Populate(VEQ_CO3, -1);
+        Populate(VEQ_CH3, -1);
+
+        VEQ_AC4 = new int[4];
+        VEQ_CO4 = new int[4];
+        VEQ_CH4 = new int[4];
+        Populate(VEQ_AC4, -1);
+        Populate(VEQ_CO4, -1);
+        Populate(VEQ_CH4, -1);
 
         presenceResult = new int[numberOfPresence];
         Populate(presenceResult,-1) ;
@@ -229,37 +263,69 @@ public class UIScript : MonoBehaviour
 
         }
 
-        //Set AC from VEQ
+
+
+        //Set all 4 VEQ
+
+        for(int j = 1; j <= 4; j++) {
         for (int i = 1; i <= 4; i++)
         {
             var index = 1;
             var currentI = i;
-            root.Query("EmbodimentTogglePaneAC" + i).Children<Toggle>().ForEach(toggle =>
+            root.Query("EmbodimentTogglePaneAC"+j + i).Children<Toggle>().ForEach(toggle =>
               {
                   var currentIndex = index;
-                  toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC", currentI, currentIndex, VEQ_AC));
+                  var currentJ = j;
+                  switch (currentJ) {
+                      case 1: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC" + currentJ, currentI, currentIndex, VEQ_AC1)); break;
+                      case 2: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC" + currentJ, currentI, currentIndex, VEQ_AC2)); break;
+                      case 3: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC" + currentJ, currentI, currentIndex, VEQ_AC3)); break;
+                      case 4: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneAC" + currentJ, currentI, currentIndex, VEQ_AC4)); break;
+                      default: Debug.Log("There was an unknown currentJ" + currentJ);break;
+
+                  }
                   index++;
               }
             );
 
             index = 1;
-            root.Query("EmbodimentTogglePaneCO" + i).Children<Toggle>().ForEach(toggle =>
+            root.Query("EmbodimentTogglePaneCO"+j + i).Children<Toggle>().ForEach(toggle =>
             {
                 var currentIndex = index;
-                toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCO", currentI, currentIndex, VEQ_CO));
+                var currentJ = j;
+                switch (currentJ)
+                {
+                    case 1: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCO" + currentJ, currentI, currentIndex, VEQ_CO1)); break;
+                    case 2: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCO" + currentJ, currentI, currentIndex, VEQ_CO2)); break;
+                    case 3: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCO" + currentJ, currentI, currentIndex, VEQ_CO3)); break;
+                    case 4: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCO" + currentJ, currentI, currentIndex, VEQ_CO4)); break;
+                    default: Debug.Log("There was an unknown currentJ" + currentJ); break;
+
+                }
                 index++;
             }
             );
 
             index = 1; ;
-            root.Query("EmbodimentTogglePaneCH" + i).Children<Toggle>().ForEach(toggle =>
+            root.Query("EmbodimentTogglePaneCH"+j + i).Children<Toggle>().ForEach(toggle =>
             {
                 var currentIndex = index;
-                toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCH", currentI, currentIndex, VEQ_CH));
+                var currentJ = j;
+
+                switch (currentJ)
+                {
+                    case 1: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCH" + currentJ, currentI, currentIndex, VEQ_CH1)); break;
+                    case 2: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCH" + currentJ, currentI, currentIndex, VEQ_CH2)); break;
+                    case 3: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCH" + currentJ, currentI, currentIndex, VEQ_CH3)); break;
+                    case 4: toggle.RegisterCallback<ClickEvent>(ev => setThisToggleActiveVEQ(toggle, "EmbodimentTogglePaneCH" + currentJ, currentI, currentIndex, VEQ_CH4)); break;
+                    default: Debug.Log("There was an unknown currentJ" + currentJ); break;
+
+                }
                 index++;
             }
             );
 
+        }
         }
 
 
@@ -326,7 +392,6 @@ public class UIScript : MonoBehaviour
 
         var newPage = root.Q("Page" + currentPage);
         newPage.style.display = DisplayStyle.Flex;
-        ChangeAvatarIfOnPage();
         if (currentPage != 1) {
             disableAllBottomPane();
         }
@@ -353,21 +418,21 @@ public class UIScript : MonoBehaviour
             videoPlayer1.loopPointReached += EndReached;
         }
 
-        if (currentPage == 8)
+        if (currentPage == 14)
         {
             videoPlayer2.Play();
             videoPlayer2.loopPointReached += EndReached;
             changeAvatarSameGenderFirstSecond();
         }
 
-        if (currentPage == 12)
+        if (currentPage == 24)
         {
             videoPlayer3.Play();
             videoPlayer3.loopPointReached += EndReached;
             changeAvatarDifferentGender();
         }
 
-        if (currentPage == 16)
+        if (currentPage == 34)
         {
             videoPlayer4.Play();
             videoPlayer4.loopPointReached += EndReached;
@@ -444,8 +509,10 @@ public class UIScript : MonoBehaviour
 
 
     }
+
+
     private void setThisToggleActiveVEQ(Toggle currentToggle, String currentField, int currentI, int index, int[] toggleFieldName) {
-        Debug.Log("Current Index chosen: " + currentI);
+        Debug.Log("Current Index: "+index+" chosen for "+ currentField + " : " + currentI);
         root.Query(currentField + currentI).Children<Toggle>().ForEach(toggle =>
         {
             toggle.value = false;
@@ -458,6 +525,7 @@ public class UIScript : MonoBehaviour
         {
             if ((toggleFieldName[0] != -1) && (toggleFieldName[1] != -1))
             {
+                Debug.Log(toggleFieldName[0] +" "+ toggleFieldName[1]);
                 enableAllBottomPane();
             }
         }
@@ -466,6 +534,7 @@ public class UIScript : MonoBehaviour
         {
             if ((toggleFieldName[2] != -1) && (toggleFieldName[3] != -1))
             {
+                Debug.Log(toggleFieldName[2] + " " + toggleFieldName[3]);
                 enableAllBottomPane();
             }
         }
@@ -558,9 +627,18 @@ public class UIScript : MonoBehaviour
         tableHeader += ",DOMINANCE1,DOMINANCE2,DOMINANCE3,DOMINANCE4,DOMINANCE5";
         tableHeader += ",VALENCE1,VALENCE2,VALENCE3,VALENCE4,VALENCE5";
         tableHeader += ",COLOR1,COLOR2,COLOR3,COLOR4,COLOR5";
-        tableHeader += ",VEQ_AC1,VEQ_AC2,VEQ_AC3,VEQ_AC4";
-        tableHeader += ",VEQ_CO1,VEQ_CO2,VEQ_CO3,VEQ_CO4";
-        tableHeader += ",VEQ_CH1,VEQ_CH2,VEQ_CH3,VEQ_CH4";
+        tableHeader += ",VEQ_AC11,VEQ_AC12,VEQ_AC13,VEQ_AC14";
+        tableHeader += ",VEQ_CO11,VEQ_CO12,VEQ_CO13,VEQ_CO14";
+        tableHeader += ",VEQ_CH11,VEQ_CH12,VEQ_CH13,VEQ_CH14";
+        tableHeader += ",VEQ_AC21,VEQ_AC22,VEQ_AC23,VEQ_AC24";
+        tableHeader += ",VEQ_CO21,VEQ_CO22,VEQ_CO23,VEQ_CO24";
+        tableHeader += ",VEQ_CH21,VEQ_CH22,VEQ_CH23,VEQ_CH24";
+        tableHeader += ",VEQ_AC31,VEQ_AC32,VEQ_AC33,VEQ_AC34";
+        tableHeader += ",VEQ_CO31,VEQ_CO32,VEQ_CO33,VEQ_CO34";
+        tableHeader += ",VEQ_CH31,VEQ_CH32,VEQ_CH33,VEQ_CH34";
+        tableHeader += ",VEQ_AC41,VEQ_AC42,VEQ_AC43,VEQ_AC44";
+        tableHeader += ",VEQ_CO41,VEQ_CO42,VEQ_CO43,VEQ_CO44";
+        tableHeader += ",VEQ_CH41,VEQ_CH42,VEQ_CH43,VEQ_CH44";
         for (int i = 1; i <= numberOfPresence; i++)
         {
             tableHeader += ",Presence" + i;
@@ -577,9 +655,18 @@ public class UIScript : MonoBehaviour
         appendToCSVFileFromInt(dominance, sb);
         appendToCSVFileFromInt(valence, sb);
         appendToCSVFileFromString(colorsPicked, sb);
-        appendToCSVFileFromInt(VEQ_AC, sb);
-        appendToCSVFileFromInt(VEQ_CO, sb);
-        appendToCSVFileFromInt(VEQ_CH, sb);
+        appendToCSVFileFromInt(VEQ_AC1, sb);
+        appendToCSVFileFromInt(VEQ_CO2, sb);
+        appendToCSVFileFromInt(VEQ_CH1, sb);
+        appendToCSVFileFromInt(VEQ_AC2, sb);
+        appendToCSVFileFromInt(VEQ_CO2, sb);
+        appendToCSVFileFromInt(VEQ_CH2, sb);
+        appendToCSVFileFromInt(VEQ_AC3, sb);
+        appendToCSVFileFromInt(VEQ_CO3, sb);
+        appendToCSVFileFromInt(VEQ_CH3, sb);
+        appendToCSVFileFromInt(VEQ_AC4, sb);
+        appendToCSVFileFromInt(VEQ_CO4, sb);
+        appendToCSVFileFromInt(VEQ_CH4, sb);
         appendToCSVFileFromInt(presenceResult, sb);
         appendToCSVFileFromString(dates, sb);
 
