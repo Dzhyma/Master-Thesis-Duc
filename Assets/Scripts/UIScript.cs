@@ -396,7 +396,7 @@ public class UIScript : MonoBehaviour
             disableAllBottomPane();
         }
 
-        if (currentPage == 5 || currentPage == 9 || currentPage == 13 || currentPage == 17) {
+        if (currentPage == 5 || currentPage == 15 || currentPage == 25|| currentPage == 35) {
             enableAllArrow();
             StartCoroutine(EnableBottomPaneAfterSeconds(30));
 
