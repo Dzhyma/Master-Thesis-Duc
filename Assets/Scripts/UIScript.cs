@@ -656,7 +656,7 @@ public class UIScript : MonoBehaviour
         appendToCSVFileFromInt(valence, sb);
         appendToCSVFileFromString(colorsPicked, sb);
         appendToCSVFileFromInt(VEQ_AC1, sb);
-        appendToCSVFileFromInt(VEQ_CO2, sb);
+        appendToCSVFileFromInt(VEQ_CO1, sb);
         appendToCSVFileFromInt(VEQ_CH1, sb);
         appendToCSVFileFromInt(VEQ_AC2, sb);
         appendToCSVFileFromInt(VEQ_CO2, sb);
